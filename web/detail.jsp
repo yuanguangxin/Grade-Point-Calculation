@@ -55,7 +55,7 @@
     </tr>
     <tr>
         <td>
-            2.目前该项目已在<a href="https://github/yuanguangxin">Github</a>上开源,
+            2.目前该项目已在<a href="https://github.com/yuanguangxin/Grade-Point-Calculation">Github</a>上开源,
             希望大家给star,给予我信心,另外有兴趣小伙伴,欢迎给我发PR。
         </td>
     </tr>
