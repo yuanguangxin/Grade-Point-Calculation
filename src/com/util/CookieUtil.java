@@ -81,7 +81,7 @@ public class CookieUtil {
         resmap = getCookie(lsit);
         paramMap = new HashMap<>();
         content = curl("POST", rateReviewUrl, paramMap, resmap, false, "");
-        inFile(content.getBody(), "/Users/yuanguangxin/Desktop/sss.txt");
+     //   inFile(content.getBody(), "/Users/yuanguangxin/Desktop/sss.txt");
         return content.getBody();
     }
 
@@ -297,27 +297,6 @@ public class CookieUtil {
             return "UTF-8";
         }
         return encoding;
-    }
-
-
-    public static boolean inFile(String content, String path) {
-        PrintWriter out = null;
-        File file = new File(path);
-        try {
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-            out = new PrintWriter(new FileWriter(file));
-
-            out.write(content);
-            out.flush();
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            out.close();
-        }
-        return false;
     }
 }
 
