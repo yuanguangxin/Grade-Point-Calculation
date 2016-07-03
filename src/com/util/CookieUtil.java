@@ -69,7 +69,8 @@ public class CookieUtil {
         resmap = getCookie(lsit);
     }
 
-    public String getBody(String userCode,String password,String a) {
+    public String[] getBody(String userCode,String password,String a) {
+        String[] strings = new String[3];
         String loginUrl = "http://ssfw2.hlju.edu.cn/ssfw/j_spring_ids_security_check";
         String rateReviewUrl = "http://ssfw3.hlju.edu.cn/ssfw/zhcx/cjxx.do";
         Map<String, String> paramMap = new HashMap<String, String>();
@@ -81,8 +82,12 @@ public class CookieUtil {
         resmap = getCookie(lsit);
         paramMap = new HashMap<>();
         content = curl("POST", rateReviewUrl, paramMap, resmap, false, "");
-     //   inFile(content.getBody(), "/Users/yuanguangxin/Desktop/sss.txt");
-        return content.getBody();
+        strings[0] = content.getBody();
+        content = curl("POST", "http://ssfw1.hlju.edu.cn/ssfw/zhcx/pyfa/faxxcj.do?pyfadm=05886", paramMap, resmap, false, "");
+        strings[1] = content.getBody();
+        content = curl("POST", "http://ssfw1.hlju.edu.cn/ssfw/index.do", paramMap, resmap, false, "");
+        strings[2] = content.getBody();
+        return strings;
     }
 
     public Content curl(String method, //方法类型

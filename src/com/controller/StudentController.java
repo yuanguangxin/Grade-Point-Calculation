@@ -49,6 +49,7 @@ public class StudentController {
         request.setAttribute("gp",String.valueOf(list.get(4)).substring(0,6));
         request.setAttribute("sum_points",list.get(6));
         request.setAttribute("sub_types",list.get(7));
+        request.setAttribute("info",list.get(8));
         return "detail.jsp";
     }
 }

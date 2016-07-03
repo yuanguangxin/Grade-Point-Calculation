@@ -2,6 +2,7 @@ package com.util;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
@@ -13,9 +14,10 @@ public class Analysis {
     String[] sub_scores;
     String[] sub_grades;
     String[] sub_types;
+    String userinfo;
     public void getScores(CookieUtil cookieUtil,String userCode,String password,String a){
-        String s = cookieUtil.getBody(userCode,password,a);
-        Document doc = Jsoup.parse(s);
+        String s1 = cookieUtil.getBody(userCode,password,a)[0];
+        Document doc = Jsoup.parse(s1);
         Elements cons= doc.getElementsByClass("ui_table_style02");
         if(cons.size()==0){
             return;
@@ -38,6 +40,11 @@ public class Analysis {
             sub_scores[i-1] = score;
             sub_types[i-1] = type;
         }
+
+        String s2 = cookieUtil.getBody(userCode,password,a)[2];
+        Document doc2 = Jsoup.parse(s2);
+        Elements info = doc2.getElementsByClass("userinfo");
+        userinfo = info.get(0).text();
     }
 
     public List<String[]> getGradePoint(){
@@ -67,6 +74,7 @@ public class Analysis {
         list.add(this_sum_score/(10*this_sum_point));
         list.add(sum_point);
         list.add(sub_types);
+        list.add(userinfo);
         return list;
     }
 }

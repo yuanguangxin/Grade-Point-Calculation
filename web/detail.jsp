@@ -13,6 +13,9 @@
 </head>
 <body style="width: 100%">
 <div style="width: 80%;margin: 0 auto">
+    <p style="font-size: 1.3em">
+        ${requestScope.info}
+    </p>
     <p style="font-size: 1.25em">
         当前已获总学分:${requestScope.sum_points}&nbsp;&nbsp;&nbsp;
     </p>
@@ -36,7 +39,14 @@
             <td>${requestScope.names[st.index]}</td>
             <td>${requestScope.sub_types[st.index]}</td>
             <td>${requestScope.points[st.index]}</td>
-            <td>${requestScope.scores[st.index]}</td>
+            <c:choose>
+                <c:when test="${requestScope.scores[st.index]<60}">
+                    <td style="color: red">${requestScope.scores[st.index]}</td>
+                </c:when>
+                <c:when test="${requestScope.scores[st.index]>=60}">
+                    <td>${requestScope.scores[st.index]}</td>
+                </c:when>
+            </c:choose>
         </tr>
     </c:forEach>
 </table>
@@ -55,8 +65,8 @@
     </tr>
     <tr>
         <td>
-            2.目前该项目已在<a href="https://github.com/yuanguangxin/Grade-Point-Calculation">Github</a>上开源,
-            希望大家给star,给予我信心,另外有兴趣小伙伴,欢迎给我发PR。
+            2.目前该项目已在<a style="font-size: 1.1em" href="https://github.com/yuanguangxin/Grade-Point-Calculation">Github</a>上开源,
+            <span style="font-size: 1.1em;color: indianred">希望大家Star</span>,给予我信心,另外有兴趣小伙伴,欢迎给我发PR。
         </td>
     </tr>
     <tr>
@@ -66,25 +76,25 @@
     </tr>
 </table>
 <br/>
-<div class="form-group" style="width: 80%;margin: 0 auto">
-        <button type="button" style="outline: none;" class="btn btn-success btn-group-sm">
-            更新预告
-        </button>
-</div>
-<table class="table" style="width: 80%;margin: 0 auto">
-    <tr>
-        <td style="border: none">
-            1.增加查看各模块详细修读情况,给予大家对自己学分更加直观的分析。
-        </td>
-    </tr>
-    <tr>
-        <td>
-            2.增加排行榜系统,让你了解周围的学霸。(为确保个人隐私,只会排出前五名)。
-            学霸们不要害羞~~
-        </td>
-    </tr>
-</table>
-<br/>
+<%--<div class="form-group" style="width: 80%;margin: 0 auto">--%>
+        <%--<button type="button" style="outline: none;" class="btn btn-success btn-group-sm">--%>
+            <%--更新预告--%>
+        <%--</button>--%>
+<%--</div>--%>
+<%--<table class="table" style="width: 80%;margin: 0 auto">--%>
+    <%--<tr>--%>
+        <%--<td style="border: none">--%>
+            <%--1.增加查看各模块详细修读情况,给予大家对自己学分更加直观的分析。--%>
+        <%--</td>--%>
+    <%--</tr>--%>
+    <%--<tr>--%>
+        <%--<td>--%>
+            <%--2.增加排行榜系统,让你了解周围的学霸。(为确保个人隐私,只会排出前五名)。--%>
+            <%--学霸们不要害羞~~--%>
+        <%--</td>--%>
+    <%--</tr>--%>
+<%--</table>--%>
+<%--<br/>--%>
 <div id="footer" style="width: 100%;line-height: 1.8;">
     <div style="width:100px;margin: 0 auto">
         <small>
