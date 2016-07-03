@@ -13,8 +13,8 @@ public class Analysis {
     String[] sub_scores;
     String[] sub_grades;
     String[] sub_types;
-    public void getScores(String userCode,String password,String a){
-        String s = CookieUtil.getBody(userCode,password,a);
+    public void getScores(CookieUtil cookieUtil,String userCode,String password,String a){
+        String s = cookieUtil.getBody(userCode,password,a);
         Document doc = Jsoup.parse(s);
         Elements cons= doc.getElementsByClass("ui_table_style02");
         if(cons.size()==0){

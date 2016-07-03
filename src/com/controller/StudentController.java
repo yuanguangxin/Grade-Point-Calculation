@@ -4,16 +4,19 @@ import com.models.Student;
 import com.service.StudentService;
 import com.util.Analysis;
 import com.util.CookieUtil;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
 public class StudentController {
+    public CookieUtil cookieUtil = new CookieUtil();
     private StudentService studentService;
 
     public StudentService getStudentService() {
@@ -25,14 +28,14 @@ public class StudentController {
     }
 
     @RequestMapping("/getCode")
-    public void getCode(HttpServletResponse response){
-        CookieUtil.getCode();
+    public void getCode(HttpServletResponse response, HttpSession session){
+        cookieUtil.getCode();
     }
 
     @RequestMapping("/login")
     public String login(Student student,@RequestParam(value = "code") String code,HttpServletRequest request){
         Analysis analysis = new Analysis();
-        analysis.getScores(student.getUsername(),student.getPassword(),code);
+        analysis.getScores(cookieUtil,student.getUsername(),student.getPassword(),code);
         List<String[]> list = analysis.getGradePoint();
         if(list==null){
             return "login.html";

@@ -25,14 +25,13 @@ import java.util.StringTokenizer;
 
 public class CookieUtil {
 
-    public static Content content;
-    public static List<String> lsit;
-    public static Map<String, String> resmap;
-
+    public Content content;
+    public List<String> lsit;
+    public Map<String, String> resmap;
     public final static String CONTENT_TYPE = "Content-Type";
 
     //得到页面Cookie,并返回一个Map
-    public static synchronized Map<String, String> getCookie(List<String> lsit) {
+    public Map<String, String> getCookie(List<String> lsit) {
         Map<String, String> resmap = new HashMap<>();
         if (lsit != null) {
             StringBuffer sb = new StringBuffer();
@@ -60,14 +59,17 @@ public class CookieUtil {
         return resmap;
     }
 
-    public static synchronized void getCode(){
+    public void getCode(){
         content = getRandom("GET", "http://ssfw1.hlju.edu.cn/ssfw/jwcaptcha.do", null, null, false, "img");
         InputStreamCopy isc=new InputStreamCopy("img/code.bmp","/Users/yuanguangxin/Desktop/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img/");
+        if(content==null){
+            getCode();
+        }
         lsit = content.getHeaders().get("Set-Cookie");
         resmap = getCookie(lsit);
     }
 
-    public static synchronized String getBody(String userCode,String password,String a) {
+    public String getBody(String userCode,String password,String a) {
         String loginUrl = "http://ssfw2.hlju.edu.cn/ssfw/j_spring_ids_security_check";
         String rateReviewUrl = "http://ssfw3.hlju.edu.cn/ssfw/zhcx/cjxx.do";
         Map<String, String> paramMap = new HashMap<String, String>();
@@ -83,7 +85,7 @@ public class CookieUtil {
         return content.getBody();
     }
 
-    public static synchronized Content curl(String method, //方法类型
+    public Content curl(String method, //方法类型
                                String sUrl,//要解析的URL
                                Map<String, String> paramMap, //存放用户名和密码的map
                                Map<String, String> requestHeaderMap,//存放COOKIE的map
@@ -204,7 +206,7 @@ public class CookieUtil {
     }
 
 
-    public static synchronized Content getRandom(String method,
+    public Content getRandom(String method,
                                     String sUrl,//要解析的url
                                     Map<String, String> paramMap, //存放用户名和密码的map
                                     Map<String, String> requestHeaderMap,//存放COOKIE的map
@@ -266,7 +268,7 @@ public class CookieUtil {
         return content;
     }
 
-    public static synchronized String getEncodingFromContentType(String contentType) {
+    public static String getEncodingFromContentType(String contentType) {
         String encoding = null;
         if (contentType == null) {
             return null;
@@ -298,7 +300,7 @@ public class CookieUtil {
     }
 
 
-    public static synchronized boolean inFile(String content, String path) {
+    public static boolean inFile(String content, String path) {
         PrintWriter out = null;
         File file = new File(path);
         try {
@@ -317,31 +319,6 @@ public class CookieUtil {
         }
         return false;
     }
-}
-
-class Content {
-    private String url;
-    private String body;
-    private Map<String, List<String>> m_mHeaders = new HashMap<String, List<String>>();
-
-    public Content(String url, String body, Map<String, List<String>> headers) {
-        this.url = url;
-        this.body = body;
-        this.m_mHeaders = headers;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public Map<String, List<String>> getHeaders() {
-        return m_mHeaders;
-    }
-
 }
 
 

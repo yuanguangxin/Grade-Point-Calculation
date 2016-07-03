@@ -42,24 +42,15 @@
     <welcome-file-list>
         <welcome-file>login.html</welcome-file>
     </welcome-file-list>
-    <error-page>
-        <error-code>404</error-code>
-        <location>/login.html</location>
-    </error-page>
 
     <!--<error-page>-->
-        <!--<error-code>412</error-code>-->
+        <!--<error-code>404</error-code>-->
         <!--<location>/login.html</location>-->
     <!--</error-page>-->
 
     <!--<error-page>-->
-        <!--<error-code>400</error-code>-->
+        <!--<error-code>500</error-code>-->
         <!--<location>/login.html</location>-->
     <!--</error-page>-->
-
-    <error-page>
-        <error-code>500</error-code>
-        <location>/login.html</location>
-    </error-page>
 
 </web-app>
