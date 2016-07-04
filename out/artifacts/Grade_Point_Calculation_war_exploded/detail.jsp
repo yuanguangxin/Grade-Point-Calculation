@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=0.8 user-scalable=0" name="viewport">
-    <title></title>
+    <title>成绩详情</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/login.css">
     <script src="js/jquery.js"></script>
@@ -40,10 +40,10 @@
             <td>${requestScope.sub_types[st.index]}</td>
             <td>${requestScope.points[st.index]}</td>
             <c:choose>
-                <c:when test="${requestScope.scores[st.index]<60}">
+                <c:when test="${requestScope.scores[st.index]<60.0}">
                     <td style="color: red">${requestScope.scores[st.index]}</td>
                 </c:when>
-                <c:when test="${requestScope.scores[st.index]>=60}">
+                <c:when test="${requestScope.scores[st.index]>=60.0}">
                     <td>${requestScope.scores[st.index]}</td>
                 </c:when>
             </c:choose>
@@ -59,19 +59,14 @@
 </div>
 <table class="table" style="width: 80%;margin: 0 auto">
     <tr>
-        <td style="border: none">
-            1.本系统由黑大计软科协完成,制作初期,尚存在微小bug,正努力调试中。
-        </td>
-    </tr>
-    <tr>
         <td>
-            2.目前该项目已在<a style="font-size: 1.1em" href="https://github.com/yuanguangxin/Grade-Point-Calculation">Github</a>上开源,
+            1.该项目已在<a style="font-size: 1.1em" href="https://github.com/yuanguangxin/Grade-Point-Calculation">Github</a>上开源,
             <span style="font-size: 1.1em;color: indianred">希望大家Star</span>,给予我信心,另外有兴趣小伙伴,欢迎给我发PR。
         </td>
     </tr>
     <tr>
         <td>
-            3.如有技术问题或功能需要。可以加我qq:274841922,也可以给我留言,欢迎大家提出宝贵意见。
+            2.如有技术问题或功能需要。可以加我qq:274841922,也可以给我留言,欢迎大家提出宝贵意见。
         </td>
     </tr>
 </table>

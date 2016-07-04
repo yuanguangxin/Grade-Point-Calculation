@@ -45,8 +45,16 @@ public class StudentController {
         request.setAttribute("names",list.get(1));
         request.setAttribute("points",list.get(2));
         request.setAttribute("scores",list.get(3));
-        request.setAttribute("this_gp",String.valueOf(list.get(5)).substring(0,6));
-        request.setAttribute("gp",String.valueOf(list.get(4)).substring(0,6));
+        if(String.valueOf(list.get(5)).length()>=6){
+            request.setAttribute("this_gp",String.valueOf(list.get(5)).substring(0,6));
+        }else {
+            request.setAttribute("this_gp",String.valueOf(list.get(5)));
+        }
+        if(String.valueOf(list.get(4)).length()>=6){
+            request.setAttribute("gp",String.valueOf(list.get(4)).substring(0,6));
+        }else {
+            request.setAttribute("gp",String.valueOf(list.get(4)));
+        }
         request.setAttribute("sum_points",list.get(6));
         request.setAttribute("sub_types",list.get(7));
         request.setAttribute("info",list.get(8));

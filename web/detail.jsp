@@ -40,10 +40,10 @@
             <td>${requestScope.sub_types[st.index]}</td>
             <td>${requestScope.points[st.index]}</td>
             <c:choose>
-                <c:when test="${requestScope.scores[st.index]<60}">
+                <c:when test="${requestScope.scores[st.index]<60.0}">
                     <td style="color: red">${requestScope.scores[st.index]}</td>
                 </c:when>
-                <c:when test="${requestScope.scores[st.index]>=60}">
+                <c:when test="${requestScope.scores[st.index]>=60.0}">
                     <td>${requestScope.scores[st.index]}</td>
                 </c:when>
             </c:choose>
@@ -59,42 +59,18 @@
 </div>
 <table class="table" style="width: 80%;margin: 0 auto">
     <tr>
-        <td style="border: none">
-            1.本系统由黑大计软科协完成,制作初期,尚存在微小bug,正努力调试中。
-        </td>
-    </tr>
-    <tr>
         <td>
-            2.目前该项目已在<a style="font-size: 1.1em" href="https://github.com/yuanguangxin/Grade-Point-Calculation">Github</a>上开源,
+            1.该项目已在<a style="font-size: 1.1em" href="https://github.com/yuanguangxin/Grade-Point-Calculation">Github</a>上开源,
             <span style="font-size: 1.1em;color: indianred">希望大家Star</span>,给予我信心,另外有兴趣小伙伴,欢迎给我发PR。
         </td>
     </tr>
     <tr>
         <td>
-            3.如有技术问题或功能需要。可以加我qq:274841922,也可以给我留言,欢迎大家提出宝贵意见。
+            2.如有技术问题或功能需要。可以加我qq:274841922,也可以给我留言,欢迎大家提出宝贵意见。
         </td>
     </tr>
 </table>
 <br/>
-<%--<div class="form-group" style="width: 80%;margin: 0 auto">--%>
-        <%--<button type="button" style="outline: none;" class="btn btn-success btn-group-sm">--%>
-            <%--更新预告--%>
-        <%--</button>--%>
-<%--</div>--%>
-<%--<table class="table" style="width: 80%;margin: 0 auto">--%>
-    <%--<tr>--%>
-        <%--<td style="border: none">--%>
-            <%--1.增加查看各模块详细修读情况,给予大家对自己学分更加直观的分析。--%>
-        <%--</td>--%>
-    <%--</tr>--%>
-    <%--<tr>--%>
-        <%--<td>--%>
-            <%--2.增加排行榜系统,让你了解周围的学霸。(为确保个人隐私,只会排出前五名)。--%>
-            <%--学霸们不要害羞~~--%>
-        <%--</td>--%>
-    <%--</tr>--%>
-<%--</table>--%>
-<%--<br/>--%>
 <div id="footer" style="width: 100%;line-height: 1.8;">
     <div style="width:100px;margin: 0 auto">
         <small>
