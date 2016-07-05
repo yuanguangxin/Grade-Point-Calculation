@@ -12,6 +12,7 @@
     <script src="js/bootstrap.min.js"></script>
 </head>
 <body style="width: 100%">
+<br/>
 <div style="width: 80%;margin: 0 auto">
     <p style="font-size: 1.3em">
         ${requestScope.info}
@@ -21,18 +22,37 @@
     </p>
     <p>当前学年绩点:${requestScope.this_gp}&nbsp;&nbsp;&nbsp;</p>
     <p>总绩点:${requestScope.gp}</p>
-    <div class="form-group">
-        <button type="button" style="outline: none;" class="btn btn-success btn-group-sm">
-            成绩详情
-        </button>
-    </div>
+</div>
+<div class="form-group" style="width: 80%;margin: 0 auto">
+    <button type="button" style="outline: none;" class="btn btn-success btn-group-sm">
+        Tips
+    </button>
 </div>
 <table class="table" style="width: 80%;margin: 0 auto">
     <tr>
-        <td>课程名称</td>
-        <td>课程类别</td>
-        <td>学分</td>
-        <td>成绩</td>
+        <td style="border: none">
+            1.该项目已在<a style="font-size: 1.1em" href="https://github.com/yuanguangxin/Grade-Point-Calculation">Github</a>上开源,
+            <span style="font-size: 1.1em;color: indianred">希望大家Star</span>,给予我信心,另外有兴趣小伙伴,欢迎给我发PR。
+        </td>
+    </tr>
+    <tr>
+        <td>
+            2.如有技术问题或功能需要。可以加我qq:274841922,也可以给我留言,欢迎大家提出宝贵意见。
+        </td>
+    </tr>
+</table>
+<br/>
+<div class="form-group" style="width: 80%;margin: 0 auto">
+    <button type="button" style="outline: none;" class="btn btn-success btn-group-sm">
+        成绩详情
+    </button>
+</div>
+<table class="table" style="width: 80%;margin: 0 auto">
+    <tr>
+        <td style="border: none">课程名称</td>
+        <td style="border: none">课程类别</td>
+        <td style="border: none">学分</td>
+        <td style="border: none">成绩</td>
     </tr>
     <c:forEach items="${requestScope.grades}" varStatus="st">
         <tr>
@@ -51,26 +71,7 @@
     </c:forEach>
 </table>
 <br/>
-<br/>
-<div class="form-group" style="width: 80%;margin: 0 auto">
-    <button type="button" style="outline: none;" class="btn btn-success btn-group-sm">
-        Tips
-    </button>
-</div>
-<table class="table" style="width: 80%;margin: 0 auto">
-    <tr>
-        <td>
-            1.该项目已在<a style="font-size: 1.1em" href="https://github.com/yuanguangxin/Grade-Point-Calculation">Github</a>上开源,
-            <span style="font-size: 1.1em;color: indianred">希望大家Star</span>,给予我信心,另外有兴趣小伙伴,欢迎给我发PR。
-        </td>
-    </tr>
-    <tr>
-        <td>
-            2.如有技术问题或功能需要。可以加我qq:274841922,也可以给我留言,欢迎大家提出宝贵意见。
-        </td>
-    </tr>
-</table>
-<br/>
+
 <div id="footer" style="width: 100%;line-height: 1.8;">
     <div style="width:100px;margin: 0 auto">
         <small>

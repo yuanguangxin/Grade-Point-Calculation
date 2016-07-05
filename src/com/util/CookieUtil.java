@@ -62,9 +62,6 @@ public class CookieUtil {
     public void getCode(){
         content = getRandom("GET", "http://ssfw1.hlju.edu.cn/ssfw/jwcaptcha.do", null, null, false, "img");
         InputStreamCopy isc=new InputStreamCopy("img/code.bmp","/Users/yuanguangxin/Desktop/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img/");
-        if(content==null){
-            getCode();
-        }
         lsit = content.getHeaders().get("Set-Cookie");
         resmap = getCookie(lsit);
     }
