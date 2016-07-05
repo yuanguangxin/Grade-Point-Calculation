@@ -2,101 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d45934af-3f2e-447c-a93f-fa01d167c4e8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/applicationContext.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/classes/com/controller/StudentController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/classes/com/mapper/StudentMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/classes/com/mapper/StudentMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/classes/com/models/Student.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/classes/com/models/StudentExample$Criteria.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/classes/com/models/StudentExample$Criterion.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/classes/com/models/StudentExample$GeneratedCriteria.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/classes/com/models/StudentExample.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/classes/com/service/StudentService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/classes/com/util/Analysis.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/classes/com/util/Content.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/classes/com/util/CookieUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/classes/com/util/InputStreamCopy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/classes/generatorConfig.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/dispatcher-servlet.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/aopalliance-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/asm-3.3.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/aspectjweaver-1.6.11.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/c3p0-0.9.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/cglib-2.2.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/commons-codec-1.9.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/commons-dbcp-1.2.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/commons-fileupload-1.2.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/commons-io-2.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/commons-logging-1.1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/commons-logging-1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/commons-pool-1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/fluent-hc-4.5.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/httpclient-4.5.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/httpclient-cache-4.5.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/httpclient-win-4.5.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/httpcore-4.4.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/httpmime-4.5.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/jackson-core-asl-1.9.11.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/jackson-mapper-asl-1.9.11.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/javassist-3.17.1-GA.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/jna-4.1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/jna-platform-4.1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/jsoup-1.9.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/jsqlparser-0.9.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/jstl-1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/junit-4.9.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/log4j-1.2.17.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/log4j-api-2.0-rc1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/log4j-core-2.0-rc1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/mchange-commons-java-0.2.3.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/mybatis-3.2.7.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/mybatis-generator-core-1.3.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/mybatis-spring-1.2.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/mysql-connector-java-5.0.5-bin.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/pagehelper-4.1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/slf4j-api-1.7.5.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/slf4j-log4j12-1.7.5.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/spring-aop-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/spring-aspects-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/spring-beans-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/spring-context-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/spring-context-support-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/spring-core-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/spring-expression-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/spring-jdbc-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/spring-orm-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/spring-test-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/spring-tx-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/spring-web-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/lib/spring-webmvc-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/css/login.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/detail.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/img/code.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/js/add_question.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/js/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Grade Point Calculation/com/controller/StudentController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Grade Point Calculation/com/mapper/StudentMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Grade Point Calculation/com/mapper/StudentMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Grade Point Calculation/com/models/Student.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Grade Point Calculation/com/models/StudentExample$Criteria.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Grade Point Calculation/com/models/StudentExample$Criterion.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Grade Point Calculation/com/models/StudentExample$GeneratedCriteria.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Grade Point Calculation/com/models/StudentExample.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Grade Point Calculation/com/service/StudentService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Grade Point Calculation/com/util/Analysis.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Grade Point Calculation/com/util/Content.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Grade Point Calculation/com/util/CookieUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Grade Point Calculation/com/util/InputStreamCopy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Grade Point Calculation/generatorConfig.xml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Grade Point Calculation.iws" />
@@ -171,6 +77,7 @@
         <option value="$PROJECT_DIR$/src/com/util/Analysis.java" />
         <option value="$PROJECT_DIR$/src/com/util/CookieUtil.java" />
         <option value="$PROJECT_DIR$/web/detail.jsp" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -923,7 +830,7 @@
       <workItem from="1467691789099" duration="709000" />
       <workItem from="1467704108514" duration="29000" />
       <workItem from="1467704250283" duration="881000" />
-      <workItem from="1467727391211" duration="203000" />
+      <workItem from="1467727391211" duration="377000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1467478152214</created>
@@ -981,11 +888,18 @@
       <option name="project" value="LOCAL" />
       <updated>1467707365513</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="del out">
+      <created>1467727779410</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1467727779410</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85296000" />
+    <option name="totallyTimeSpent" value="85470000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -993,6 +907,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1016,7 +931,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38921455" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1071,7 +985,8 @@
     <MESSAGE value="add userinfo" />
     <MESSAGE value="del sth" />
     <MESSAGE value="update detail" />
-    <option name="LAST_COMMIT_MESSAGE" value="update detail" />
+    <MESSAGE value="del out" />
+    <option name="LAST_COMMIT_MESSAGE" value="del out" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1082,7 +997,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/login.html" />
     <entry file="file://$PROJECT_DIR$/web/css/login.css" />
     <entry file="file://$PROJECT_DIR$/web/test.html" />
     <entry file="file://$PROJECT_DIR$/web/login.html" />
@@ -1300,6 +1214,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1224">
           <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
           <folding />
         </state>
       </provider>
