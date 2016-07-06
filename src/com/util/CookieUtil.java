@@ -59,9 +59,12 @@ public class CookieUtil {
         return resmap;
     }
 
-    public void getCode(){
-        content = getRandom("GET", "http://ssfw1.hlju.edu.cn/ssfw/jwcaptcha.do", null, null, false, "img");
-        InputStreamCopy isc=new InputStreamCopy("img/code.bmp","/Users/yuanguangxin/Desktop/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img/");
+    public void getCode(String us){
+        content = getRandom("GET", "http://ssfw1.hlju.edu.cn/ssfw/jwcaptcha.do", null, null, false, "/Users/yuanguangxin/Desktop/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img",us);
+      //  InputStreamCopy isc=new InputStreamCopy("img/code"+us+".bmp","/Users/yuanguangxin/Desktop/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img/");
+        if(content==null){
+            return;
+        }
         lsit = content.getHeaders().get("Set-Cookie");
         resmap = getCookie(lsit);
     }
@@ -79,6 +82,9 @@ public class CookieUtil {
         resmap = getCookie(lsit);
         paramMap = new HashMap<>();
         content = curl("POST", rateReviewUrl, paramMap, resmap, false, "");
+        if(content==null){
+            return strings;
+        }
         strings[0] = content.getBody();
         content = curl("POST", "http://ssfw1.hlju.edu.cn/ssfw/zhcx/pyfa/faxxcj.do?pyfadm=05886", paramMap, resmap, false, "");
         strings[1] = content.getBody();
@@ -213,7 +219,7 @@ public class CookieUtil {
                                     Map<String, String> paramMap, //存放用户名和密码的map
                                     Map<String, String> requestHeaderMap,//存放COOKIE的map
                                     boolean isOnlyReturnHeader,
-                                    String path) {
+                                    String path,String us) {
 
         Content content = null;
         HttpURLConnection httpUrlConnection = null;
@@ -245,7 +251,7 @@ public class CookieUtil {
                 if (!isOnlyReturnHeader) {
                     DataInputStream ins = new DataInputStream(httpUrlConnection.getInputStream());
                     //验证码的位置
-                    DataOutputStream out = new DataOutputStream(new FileOutputStream(path + "/code.bmp"));
+                    DataOutputStream out = new DataOutputStream(new FileOutputStream(path + "/code"+us+".bmp"));
                     byte[] buffer = new byte[4096];
                     int count = 0;
                     while ((count = ins.read(buffer)) > 0) {

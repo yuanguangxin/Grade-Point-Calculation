@@ -26,15 +26,14 @@
                 <input placeholder="Password" type="password" id="password_input" name="password"/>
             </li>
 
-            <li id="mod" style="margin-left: -55px">
-                <i><img style="width: 63px" id="codes" src=""/></i>
+            <li id="mod" style="margin-left: -52px">
+                <i><img style="width: 63px;cursor: pointer" id="codes" src=""/></i>
                 <input placeholder="Verification Code" id="code" name="code"/>
             </li>
 
             <li>
                 <a id="submit" style="cursor: pointer"> <i class="glyphicon glyphicon-log-in"></i>Login</a>
             </li>
-
         </ul>
     </form>
     <div id="footer">
@@ -45,15 +44,7 @@
     </div>
 </div>
 <script>
-    $(function(){
-       $.post("/getCode.action",{},function (data,textStatus) {
-           document.getElementById("codes").setAttribute("src","img/code.bmp");
-
-       });
-        $("#submit").click(function () {
-            $("form").submit();
-        });
-    });
+    eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('$(2(){1.g("4")[0].h=2(){$.7("/c.9",{},2(3,a){1.5("b").6("8","4/f"+3+".e")})};$.7("/c.9",{},2(3,a){1.5("b").6("8","4/f"+3+".e")});$("#d").j(2(){1.5("k").l+="1";$("i").d()})});',22,22,'|document|function|data|img|getElementById|setAttribute|post|src|action|textStatus|codes|getCode|submit|bmp|code|getElementsByTagName|onclick|form|click|password_input|value'.split('|'),0,{}))
 </script>
 </body>
 </html>

@@ -15,8 +15,11 @@ public class Analysis {
     String[] sub_grades;
     String[] sub_types;
     String userinfo;
+    ArrayList<String[]> every_year_points = new ArrayList<>();
+    double[] s = new double[4];
     public void getScores(CookieUtil cookieUtil,String userCode,String password,String a){
         String s1 = cookieUtil.getBody(userCode,password,a)[0];
+        if(s1==null) return;
         Document doc = Jsoup.parse(s1);
         Elements cons= doc.getElementsByClass("ui_table_style02");
         if(cons.size()==0){
@@ -47,7 +50,7 @@ public class Analysis {
         userinfo = info.get(0).text();
     }
 
-    public List<String[]> getGradePoint(){
+    public List getGradePoint(){
         if(sub_names==null){
             return null;
         }
@@ -56,7 +59,27 @@ public class Analysis {
         double this_sum_score = 0;
         double sum_point = 0;
         double sum_score = 0;
+        String[] year = new String[2];
+        if(sub_grades.length!=0){
+            year[0] = sub_grades[0].substring(0,9);
+        }
+        double pp =0;
+        double ss=0;
+        int k=0;
         for (int i=0;i<sub_points.length;i++){
+            if(!sub_grades[i].substring(0,9).equals(year[0].substring(0,9))){
+                k++;
+                year[1] = String.valueOf(ss/(10*pp));
+                every_year_points.add(year.clone());
+                year[0] = sub_grades[i].substring(0,9);
+                pp=0;
+                ss=0;
+            }
+            if(Double.parseDouble(sub_scores[i])>=60){
+                s[k]+=Double.parseDouble(sub_points[i]);
+                pp+=Double.parseDouble(sub_points[i]);
+                ss+=Double.parseDouble(sub_scores[i])*Double.parseDouble(sub_points[i]);
+            }
             if(Double.parseDouble(sub_scores[i])>=60){
                 if(sub_grades[i].indexOf("2015-2016")!=-1){
                     this_sum_point+=Double.parseDouble(sub_points[i]);
@@ -66,6 +89,10 @@ public class Analysis {
                 sum_score+=Double.parseDouble(sub_scores[i])*Double.parseDouble(sub_points[i]);
             }
         }
+        if(pp!=0){
+            year[1] = String.valueOf(ss/(10*pp));
+        }
+        every_year_points.add(year);
         list.add(sub_grades);
         list.add(sub_names);
         list.add(sub_points);
@@ -75,6 +102,8 @@ public class Analysis {
         list.add(sum_point);
         list.add(sub_types);
         list.add(userinfo);
+        list.add(every_year_points);
+        list.add(s);
         return list;
     }
 }
