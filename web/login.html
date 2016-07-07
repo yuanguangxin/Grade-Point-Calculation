@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/login.css">
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
 </head>
 <body>
 <div class="center">
@@ -44,6 +45,10 @@
     </div>
 </div>
 <script>
+    if($.cookie("user")!=null&&$.cookie("pass")!=null){
+        document.getElementById("email_input").value = $.cookie("user");
+        document.getElementById("password_input").value = $.cookie("pass");
+    }
     document.body.onkeydown = function () {
       if(event.keyCode==13){
           $("form").submit();

@@ -230,7 +230,7 @@
         var score = 0;
         var point = 0;
         var last = 0;
-        for(let i=0;i<selbox.length;i++){
+        for(var i=0;i<selbox.length;i++){
             if(selbox[i].checked){
                 if(parseFloat(selbox[i].parentNode.parentNode.childNodes[9].innerHTML)>=60.0){
                     score+=parseFloat(selbox[i].parentNode.parentNode.childNodes[9].innerHTML)*parseFloat(selbox[i].parentNode.parentNode.childNodes[7].innerHTML);
@@ -238,7 +238,6 @@
                 }
             }
         }
-        alert(point);
         last = score/(10*point);
         document.getElementById("cal").innerHTML = "选择项绩点:<span style='color:indianred'>"+last+"</span>";
     });

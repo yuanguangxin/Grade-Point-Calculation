@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -52,7 +53,11 @@ public class StudentController {
     }
 
     @RequestMapping("/login")
-    public String login(Student student,@RequestParam(value = "code") String code,HttpServletRequest request){
+    public String login(Student student,@RequestParam(value = "code") String code,HttpServletRequest request,HttpServletResponse response){
+        Cookie c1=new Cookie("user",student.getUsername());
+        Cookie c2=new Cookie("pass",student.getPassword().split("document")[0]);
+        response.addCookie(c1);
+        response.addCookie(c2);
         student.setPassword(student.getPassword().split("document")[0]);
         Analysis analysis = new Analysis();
         analysis.getScores(cookieUtil,student.getUsername(),student.getPassword(),code);
