@@ -101,26 +101,50 @@
 
     myChart1.setOption(option1);
 </script>
-<%--<div class="form-group" style="width: 80%;margin: 0 auto">--%>
-    <%--<button type="button" style="outline: none;" class="btn btn-success btn-group-sm">--%>
-        <%--排行榜--%>
-    <%--</button>--%>
-<%--</div>--%>
-<%--<table class="table" style="width: 80%;margin: 0 auto">--%>
-    <%--<tr>--%>
-        <%--<td style="border: 0;">学号</td>--%>
-        <%--<td style="border: 0">信息</td>--%>
-        <%--<td style="border: 0">总绩点</td>--%>
-    <%--</tr>--%>
-    <%--<c:forEach items="${requestScope.ranking}" var="rank">--%>
-        <%--<tr>--%>
-            <%--<td>${rank.stuId}</td>--%>
-            <%--<td>${rank.info}</td>--%>
-            <%--<td>${rank.point}</td>--%>
-        <%--</tr>--%>
-    <%--</c:forEach>--%>
-<%--</table>--%>
-<%--<br/>--%>
+<div class="form-group" style="width: 80%;margin: 0 auto">
+    <button type="button" style="outline: none;" class="btn btn-success btn-group-sm">
+        排行榜
+    </button>
+</div>
+<table class="table" style="width: 80%;margin: 0 auto">
+    <tr>
+        <td style="border: 0;">排名</td>
+        <td style="border: 0;">学号</td>
+        <td style="border: 0">信息</td>
+        <td style="border: 0">总绩点</td>
+    </tr>
+    <c:forEach items="${requestScope.ranking}" var="rank" varStatus="st">
+        <tr>
+            <c:choose>
+                <c:when test="${st.index==0}">
+                    <td style="color: #F44336;"><b>1</b></td>
+                    <td style="color: #F44336;"><b>${rank.stuId}</b></td>
+                    <td style="color: #F44336;"><b>${rank.info}</b></td>
+                    <td style="color: #F44336;"><b>${rank.point}</b></td>
+                </c:when>
+                <c:when test="${st.index==1}">
+                    <td style="color: #F80;"><b>2</b></td>
+                    <td style="color: #F80;"><b>${rank.stuId}</b></td>
+                    <td style="color: #F80;"><b>${rank.info}</b></td>
+                    <td style="color: #F80;"><b>${rank.point}</b></td>
+                </c:when>
+                <c:when test="${st.index==2}">
+                    <td style="color: #FFC407;">3</td>
+                    <td style="color: #FFC407;"><b>${rank.stuId}</b></td>
+                    <td style="color: #FFC407;"><b>${rank.info}</b></td>
+                    <td style="color: #FFC407;"><b>${rank.point}</b></td>
+                </c:when>
+                <c:otherwise>
+                    <td>${st.index+1}</td>
+                    <td>${rank.stuId}</td>
+                    <td>${rank.info}</td>
+                    <td>${rank.point}</td>
+                </c:otherwise>
+            </c:choose>
+        </tr>
+    </c:forEach>
+</table>
+<br/>
 <div class="form-group" style="width: 80%;margin: 0 auto">
     <button type="button" style="outline: none;" class="btn btn-success btn-group-sm">
         成绩详情

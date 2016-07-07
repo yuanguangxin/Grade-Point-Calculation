@@ -22,6 +22,7 @@ import java.util.List;
 @Controller
 public class StudentController {
     public CookieUtil cookieUtil = new CookieUtil();
+    public String path = "";
     private StudentService studentService;
     private RankService rankService;
 
@@ -44,8 +45,10 @@ public class StudentController {
     @RequestMapping("/getCode")
     public void getCode(HttpServletResponse response, HttpSession session) throws Exception{
         String s = Dates.getDate();
-        cookieUtil.getCode(s);
-        response.getWriter().print(s);
+        String ss = String.valueOf(Math.random()*10);
+        cookieUtil.getCode(s+ss);
+        response.getWriter().print(s+ss);
+        path = "/Users/yuanguangxin/Desktop/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img/code"+s+ss+".bmp";
     }
 
     @RequestMapping("/login")
@@ -58,6 +61,10 @@ public class StudentController {
             return "login.html";
         }
         studentService.login(student);
+        File file = new File(path);
+        if(file.exists()){
+            file.delete();
+        }
         Rank rank = new Rank();
         rank.setStuId(student.getUsername());
         request.setAttribute("grades",list.get(0));
@@ -99,8 +106,8 @@ public class StudentController {
         request.setAttribute("test",year_point);
         double[] s = (double[]) list.get(10);
         request.setAttribute("poi",s);
-      //  List<Rank> list1 = rankService.getRank();
-      ///  request.setAttribute("ranking",list1);
+        List<Rank> list1 = rankService.getRank();
+        request.setAttribute("ranking",list1);
         return "detail.jsp";
     }
 }
