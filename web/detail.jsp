@@ -41,8 +41,8 @@
     <p style="font-size: 1.2em">
         当前已获总学分:${requestScope.sum_points}&nbsp;&nbsp;&nbsp;
     </p>
-    <p style="font-size: 1.2em">当前学年绩点:${requestScope.this_gp}&nbsp;&nbsp;&nbsp;</p>
     <p style="font-size: 1.2em">总绩点:${requestScope.gp}</p>
+    <p style="font-size: 1.2em">个人当前学年绩点:${requestScope.this_gp}&nbsp;&nbsp;&nbsp;</p>
     <p style="font-size: 1.2em" id="cal">选择项绩点:<span style='color:indianred'>${requestScope.gp}</span></p>
 </div>
 
