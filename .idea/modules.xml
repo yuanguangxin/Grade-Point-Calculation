@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Grade Point Calculation.iml" filepath="$PROJECT_DIR$/Grade Point Calculation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/score-query.iml" filepath="$PROJECT_DIR$/score-query.iml" />
+      <module fileurl="file://$PROJECT_DIR$/score-query-dao/score-query-dao.iml" filepath="$PROJECT_DIR$/score-query-dao/score-query-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/score-query-model/score-query-model.iml" filepath="$PROJECT_DIR$/score-query-model/score-query-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/score-query-service/score-query-service.iml" filepath="$PROJECT_DIR$/score-query-service/score-query-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/score-query-util/score-query-util.iml" filepath="$PROJECT_DIR$/score-query-util/score-query-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/score-query-web/score-query-web.iml" filepath="$PROJECT_DIR$/score-query-web/score-query-web.iml" />
     </modules>
   </component>
 </project>
