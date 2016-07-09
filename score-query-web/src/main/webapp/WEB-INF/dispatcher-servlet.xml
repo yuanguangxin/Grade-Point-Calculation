@@ -1,0 +1,41 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <context:component-scan base-package="edu.hlju.csti.web.sq.controller"/>
+    <mvc:annotation-driven/>
+    <mvc:resources mapping="/assets/**" location="/assets/"/>
+    <context:property-placeholder location="classpath:web_conf.properties"/>
+    <!--配置视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+        <property name="attributesMap">
+            <util:map>
+                <entry key="CODE_IMG_URL" value="${captcha.url}"/>
+            </util:map>
+        </property>
+    </bean>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- set the max upload size 2MB -->
+        <property name="maxUploadSize" value="524288000"/>
+        <property name="defaultEncoding" value="utf-8"/>
+        <property name="maxInMemorySize" value="102400000"/>
+    </bean>
+    <!--<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+    <!--<property name="defaultStatusCode" value="500"/>-->
+    <!--<property name="defaultErrorView" value="500"/>-->
+    <!--<property name="exceptionAttribute" value="exception"/>-->
+    <!--<property name="exceptionMappings">-->
+    <!--<props>-->
+    <!--<prop key="NumberFormatException">500</prop>-->
+    <!--</props>-->
+    <!--</property>-->
+    <!--</bean>-->
+</beans>
