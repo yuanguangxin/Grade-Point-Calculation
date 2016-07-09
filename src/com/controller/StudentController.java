@@ -7,6 +7,7 @@ import com.service.StudentService;
 import com.util.Analysis;
 import com.util.CookieUtil;
 import com.util.Dates;
+import com.util.Decode;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,20 +46,27 @@ public class StudentController {
 
     @RequestMapping("/getCode")
     public void getCode(HttpServletResponse response, HttpSession session) throws Exception{
+        if(session.getAttribute("path")!=null){
+            File file = new File(session.getAttribute("path").toString());
+            if(file.exists()){
+                file.delete();
+            }
+        }
         String s = Dates.getDate();
         String ss = String.valueOf(Math.random()*10);
         cookieUtil.getCode(s+ss);
         response.getWriter().print(s+ss);
         path = "/Users/yuanguangxin/Desktop/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img/code"+s+ss+".bmp";
+        session.setAttribute("path",path);
     }
 
     @RequestMapping("/login")
     public String login(Student student,@RequestParam(value = "code") String code,HttpServletRequest request,HttpServletResponse response){
         Cookie c1=new Cookie("user",student.getUsername());
-        Cookie c2=new Cookie("pass",student.getPassword().split("document")[0]);
+        Cookie c2=new Cookie("pass",new String(Decode.decode(student.getPassword())));
         response.addCookie(c1);
         response.addCookie(c2);
-        student.setPassword(student.getPassword().split("document")[0]);
+        student.setPassword(new String(Decode.decode(student.getPassword())));
         Analysis analysis = new Analysis();
         analysis.getScores(cookieUtil,student.getUsername(),student.getPassword(),code);
         List list = analysis.getGradePoint();
@@ -66,10 +74,6 @@ public class StudentController {
             return "login.html";
         }
         studentService.login(student);
-        File file = new File(path);
-        if(file.exists()){
-            file.delete();
-        }
         Rank rank = new Rank();
         rank.setStuId(student.getUsername());
         request.setAttribute("grades",list.get(0));
