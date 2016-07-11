@@ -15,11 +15,6 @@
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
-        <property name="attributesMap">
-            <util:map>
-                <entry key="CODE_IMG_URL" value="${captcha.url}"/>
-            </util:map>
-        </property>
     </bean>
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

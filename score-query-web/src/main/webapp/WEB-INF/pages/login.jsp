@@ -57,6 +57,9 @@
             $("form").submit();
         }
     };
+    $("#submit").click(function(){
+        $("form").submit();
+    });
     function reloadCode() {
         document.getElementById("codes").src = '<c:out value="${CODE_IMG_URL}"/>' + new Date().getTime();
     }

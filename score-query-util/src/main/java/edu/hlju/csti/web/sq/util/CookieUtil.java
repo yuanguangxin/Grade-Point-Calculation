@@ -1,8 +1,10 @@
 package edu.hlju.csti.web.sq.util;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.ByteArrayOutputStream;
-import java.io.DataInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
@@ -10,20 +12,24 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.nio.charset.Charset;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 public class CookieUtil {
 
-    public Content content;
-    public List<String> lsit;
-    public Map<String, String> resmap;
-    public final static String CONTENT_TYPE = "Content-Type";
+    private Content content;
+    private List<String> lsit;
+    private Map<String, String> resmap;
+    private final static String CONTENT_TYPE = "Content-Type";
+    private static Logger logger = LoggerFactory.getLogger(CookieUtil.class);
 
     //得到页面Cookie,并返回一个Map
     public Map<String, String> getCookie(List<String> lsit) {
         Map<String, String> resmap = new HashMap<>();
         if (lsit != null) {
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
             boolean isLast = false;
             int i = 0;
             for (String val : lsit) {
@@ -37,9 +43,9 @@ public class CookieUtil {
                     String cookieVal = val.substring(pos + 1);
                     cookieVal = cookieVal.split(";")[0];
                     if (isLast) {
-                        sb.append(cookieName + "=" + cookieVal);
+                        sb.append(cookieName).append("=").append(cookieVal);
                     } else {
-                        sb.append(cookieName + "=" + cookieVal + ";");
+                        sb.append(cookieName).append("=").append(cookieVal).append(";");
                     }
                 }
             }
@@ -48,16 +54,16 @@ public class CookieUtil {
         return resmap;
     }
 
-    public byte[] getCode() {
-        content = getRandom("GET", "http://ssfw1.hlju.edu.cn/ssfw/jwcaptcha.do", null, null, false);
-        //  InputStreamCopy isc=new InputStreamCopy("img/code"+us+".bmp","/Users/yuanguangxin/Desktop/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img/");
-        if (content == null) {
-            return new byte[]{};
-        }
-        lsit = content.getHeaders().get("Set-Cookie");
-        resmap = getCookie(lsit);
-        return content.getBytesBody();
-    }
+//    public byte[] getCode() {
+//        content = getRandom("GET", "http://ssfw1.hlju.edu.cn/ssfw/jwcaptcha.do", null, null, false);
+//        //  InputStreamCopy isc=new InputStreamCopy("img/code"+us+".bmp","/Users/yuanguangxin/Desktop/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img/");
+//        if (content == null) {
+//            return new byte[]{};
+//        }
+//        lsit = content.getHeaders().get("Set-Cookie");
+//        resmap = getCookie(lsit);
+//        return content.getBytesBody();
+//    }
 
     public String[] getBody(String userCode, String password, String a) {
         String[] strings = new String[3];
@@ -67,21 +73,20 @@ public class CookieUtil {
         paramMap.put("j_username", userCode);
         paramMap.put("j_password", password);
         paramMap.put("validateCode", a + "");
-        content = curl("POST", loginUrl, paramMap, resmap, false, "");
+        content = curl("POST", loginUrl, paramMap, resmap, false);
         //得到登录后的Cookie,用作通行证
         resmap = getCookie(lsit);
+        logger.info("返回的Cookie为:{}",resmap);
         paramMap = new HashMap<>();
-        content = curl("POST", rateReviewUrl, paramMap, resmap, false, "");
+        content = curl("POST", rateReviewUrl, paramMap, resmap, false);
         if (content == null) {
-            System.out.println(Arrays.toString(strings));
             return strings;
         }
         strings[0] = content.getBody();
-        content = curl("POST", "http://ssfw1.hlju.edu.cn/ssfw/zhcx/pyfa/faxxcj.do?pyfadm=05886", paramMap, resmap, false, "");
+        content = curl("POST", "http://ssfw1.hlju.edu.cn/ssfw/zhcx/pyfa/faxxcj.do?pyfadm=05886", paramMap, resmap, false);
         strings[1] = content.getBody();
-        content = curl("POST", "http://ssfw1.hlju.edu.cn/ssfw/index.do", paramMap, resmap, false, "");
+        content = curl("POST", "http://ssfw1.hlju.edu.cn/ssfw/index.do", paramMap, resmap, false);
         strings[2] = content.getBody();
-        System.out.println(Arrays.toString(strings));
         return strings;
     }
 
@@ -89,11 +94,10 @@ public class CookieUtil {
                         String sUrl,//要解析的URL
                         Map<String, String> paramMap, //存放用户名和密码的map
                         Map<String, String> requestHeaderMap,//存放COOKIE的map
-                        boolean isOnlyReturnHeader,
-                        String path) {//存放文件路径
+                        boolean isOnlyReturnHeader) {//存放文件路径
         Content content = null;
         HttpURLConnection httpUrlConnection = null;
-        InputStream in = null;
+        InputStream in;
         try {
             URL url = new URL(sUrl);
             boolean isPost = "POST".equals(method);
@@ -102,8 +106,7 @@ public class CookieUtil {
                 method = "POST";
             }
 
-            URL resolvedURL = url;
-            URLConnection urlConnection = resolvedURL.openConnection();
+            URLConnection urlConnection = url.openConnection();
             httpUrlConnection = (HttpURLConnection) urlConnection;
             httpUrlConnection.setRequestMethod(method);
             httpUrlConnection.setRequestProperty("Accept-Language", "zh-cn,zh;q=0.5");
@@ -141,9 +144,7 @@ public class CookieUtil {
                     bufOut.write(encValue.getBytes("UTF-8"));
                 }
                 byte[] postContent = bufOut.toByteArray();
-                if (urlConnection instanceof HttpURLConnection) {
-                    ((HttpURLConnection) urlConnection).setFixedLengthStreamingMode(postContent.length);
-                }
+                ((HttpURLConnection) urlConnection).setFixedLengthStreamingMode(postContent.length);
                 OutputStream postOut = urlConnection.getOutputStream();
                 postOut.write(postContent);
                 postOut.flush();
@@ -155,21 +156,21 @@ public class CookieUtil {
             if (responseCode == HttpURLConnection.HTTP_MOVED_PERM || responseCode == HttpURLConnection.HTTP_MOVED_TEMP) {
                 String location = httpUrlConnection.getHeaderField("Location");
                 URL newAction = new URL(url, location);
-                StringBuffer newUrlSb = new StringBuffer(newAction.getProtocol() + "://" + newAction.getHost());
+                StringBuilder newUrlSb = new StringBuilder(newAction.getProtocol() + "://" + newAction.getHost());
                 if (newAction.getPort() != -1) {
-                    newUrlSb.append(":" + newAction.getPort());
+                    newUrlSb.append(":").append(newAction.getPort());
                 }
                 if (newAction.getPath() != null) {
                     newUrlSb.append(newAction.getPath());
                 }
                 if (newAction.getQuery() != null) {
-                    newUrlSb.append("?" + newAction.getQuery());
+                    newUrlSb.append("?").append(newAction.getQuery());
                 }
                 if (newAction.getRef() != null) {
-                    newUrlSb.append("#" + newAction.getRef());
+                    newUrlSb.append("#").append(newAction.getRef());
                 }
 
-                return curl("POST", newUrlSb.toString(), paramMap, requestHeaderMap, isOnlyReturnHeader, path);
+                return curl("POST", newUrlSb.toString(), paramMap, requestHeaderMap, isOnlyReturnHeader);
             } else if (responseCode == HttpURLConnection.HTTP_OK || responseCode == HttpURLConnection.HTTP_CREATED) {
                 byte[] bytes = new byte[0];
                 if (!isOnlyReturnHeader) {
@@ -189,10 +190,7 @@ public class CookieUtil {
                         in.close();
                     }
                 }
-                String encoding = null;
-                if (encoding == null) {
-                    encoding = getEncodingFromContentType(httpUrlConnection.getHeaderField(CONTENT_TYPE));
-                }
+                String encoding = getEncodingFromContentType(httpUrlConnection.getHeaderField(CONTENT_TYPE));
                 content = new Content(sUrl, new String(bytes, encoding), httpUrlConnection.getHeaderFields());
             }
         } catch (Exception e) {
@@ -206,63 +204,63 @@ public class CookieUtil {
     }
 
 
-    public Content getRandom(String method,
-                             String sUrl,//要解析的url
-                             Map<String, String> paramMap, //存放用户名和密码的map
-                             Map<String, String> requestHeaderMap,//存放COOKIE的map
-                             boolean isOnlyReturnHeader) {
-
-        Content content = null;
-        HttpURLConnection httpUrlConnection = null;
-        InputStream in = null;
-        try {
-            URL url = new URL(sUrl);
-            boolean isPost = "POST".equals(method);
-            if (method == null || (!"GET".equalsIgnoreCase(method) && !"POST".equalsIgnoreCase(method))) {
-                method = "POST";
-            }
-            URL resolvedURL = url;
-            URLConnection urlConnection = resolvedURL.openConnection();
-            httpUrlConnection = (HttpURLConnection) urlConnection;
-            httpUrlConnection.setRequestMethod(method);
-            httpUrlConnection.setRequestProperty("Accept-Language", "zh-cn,zh;q=0.5");
-            httpUrlConnection.setInstanceFollowRedirects(false);
-            httpUrlConnection.setDoOutput(true);
-            httpUrlConnection.setDoInput(true);
-            httpUrlConnection.setConnectTimeout(5000);
-            httpUrlConnection.setReadTimeout(5000);
-            httpUrlConnection.setUseCaches(false);
-            httpUrlConnection.setDefaultUseCaches(false);
-            httpUrlConnection.connect();
-
-            int responseCode = httpUrlConnection.getResponseCode();
-
-            if (responseCode == HttpURLConnection.HTTP_OK || responseCode == HttpURLConnection.HTTP_CREATED) {
-                String encoding = getEncodingFromContentType(httpUrlConnection.getHeaderField(CONTENT_TYPE));
-                content = new Content(sUrl, new String(new byte[]{}, encoding), httpUrlConnection.getHeaderFields());
-                if (!isOnlyReturnHeader) {
-                    DataInputStream ins = new DataInputStream(httpUrlConnection.getInputStream());
-                    //验证码的位置
-                    ByteArrayOutputStream out = new ByteArrayOutputStream();
-                    byte[] buffer = new byte[4096];
-                    int count = 0;
-                    while ((count = ins.read(buffer)) > 0) {
-                        out.write(buffer, 0, count);
-                    }
-                    content.setBytesBody(out.toByteArray());
-                    out.close();
-                    ins.close();
-                }
-            }
-        } catch (Exception e) {
-            return null;
-        } finally {
-            if (httpUrlConnection != null) {
-                httpUrlConnection.disconnect();
-            }
-        }
-        return content;
-    }
+//    public Content getRandom(String method,
+//                             String sUrl,//要解析的url
+//                             Map<String, String> paramMap, //存放用户名和密码的map
+//                             Map<String, String> requestHeaderMap,//存放COOKIE的map
+//                             boolean isOnlyReturnHeader) {
+//
+//        Content content = null;
+//        HttpURLConnection httpUrlConnection = null;
+//        InputStream in = null;
+//        try {
+//            URL url = new URL(sUrl);
+//            boolean isPost = "POST".equals(method);
+//            if (method == null || (!"GET".equalsIgnoreCase(method) && !"POST".equalsIgnoreCase(method))) {
+//                method = "POST";
+//            }
+//            URL resolvedURL = url;
+//            URLConnection urlConnection = resolvedURL.openConnection();
+//            httpUrlConnection = (HttpURLConnection) urlConnection;
+//            httpUrlConnection.setRequestMethod(method);
+//            httpUrlConnection.setRequestProperty("Accept-Language", "zh-cn,zh;q=0.5");
+//            httpUrlConnection.setInstanceFollowRedirects(false);
+//            httpUrlConnection.setDoOutput(true);
+//            httpUrlConnection.setDoInput(true);
+//            httpUrlConnection.setConnectTimeout(5000);
+//            httpUrlConnection.setReadTimeout(5000);
+//            httpUrlConnection.setUseCaches(false);
+//            httpUrlConnection.setDefaultUseCaches(false);
+//            httpUrlConnection.connect();
+//
+//            int responseCode = httpUrlConnection.getResponseCode();
+//
+//            if (responseCode == HttpURLConnection.HTTP_OK || responseCode == HttpURLConnection.HTTP_CREATED) {
+//                String encoding = getEncodingFromContentType(httpUrlConnection.getHeaderField(CONTENT_TYPE));
+//                content = new Content(sUrl, new String(new byte[]{}, encoding), httpUrlConnection.getHeaderFields());
+//                if (!isOnlyReturnHeader) {
+//                    DataInputStream ins = new DataInputStream(httpUrlConnection.getInputStream());
+//                    //验证码的位置
+//                    ByteArrayOutputStream out = new ByteArrayOutputStream();
+//                    byte[] buffer = new byte[4096];
+//                    int count = 0;
+//                    while ((count = ins.read(buffer)) > 0) {
+//                        out.write(buffer, 0, count);
+//                    }
+//                    content.setBytesBody(out.toByteArray());
+//                    out.close();
+//                    ins.close();
+//                }
+//            }
+//        } catch (Exception e) {
+//            return null;
+//        } finally {
+//            if (httpUrlConnection != null) {
+//                httpUrlConnection.disconnect();
+//            }
+//        }
+//        return content;
+//    }
 
     public static String getEncodingFromContentType(String contentType) {
         String encoding = null;

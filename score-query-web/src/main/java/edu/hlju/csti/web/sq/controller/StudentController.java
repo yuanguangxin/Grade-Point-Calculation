@@ -7,6 +7,7 @@ import edu.hlju.csti.web.sq.service.RankService;
 import edu.hlju.csti.web.sq.service.StudentService;
 import edu.hlju.csti.web.sq.util.Analysis;
 import edu.hlju.csti.web.sq.util.CookieUtil;
+import org.apache.commons.lang3.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -37,7 +38,8 @@ public class StudentController {
 
     @RequestMapping(value = {"/login", "/"}, method = RequestMethod.GET)
     public ModelAndView login() {
-        return new ModelAndView("login");
+        codeUrl = codeUrl.replace("[n]", String.valueOf(RandomUtils.nextInt(1,3)));
+        return new ModelAndView("login","CODE_IMG_URL",codeUrl);
     }
 
     @RequestMapping(value = "/submit", method = RequestMethod.POST)
