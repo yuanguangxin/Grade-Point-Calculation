@@ -1,5 +1,6 @@
 package edu.hlju.csti.web.sq.service;
 
+import edu.hlju.csti.web.sq.exception.SystemException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -22,7 +23,7 @@ public class RequestService {
     @Value("#{config['heida.rate.view.url']}")
     private String rateReviewUrl;
 
-    public void copyCaptcha(OutputStream outputStream) {
+    public void copyCaptcha(OutputStream outputStream) throws SystemException {
 
     }
 }

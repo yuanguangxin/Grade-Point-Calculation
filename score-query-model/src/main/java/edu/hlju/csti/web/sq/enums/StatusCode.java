@@ -1,4 +1,4 @@
-package edu.hlju.csti.web.sq.exception;
+package edu.hlju.csti.web.sq.enums;
 
 /**
  * 开发者:李嘉鼎
@@ -7,6 +7,7 @@ package edu.hlju.csti.web.sq.exception;
  */
 public enum StatusCode {
     NULL_ERROR(0),
+    UNKNOWN_ERROR(100),
     SUCCESS(200),
     REQUEST_ERROR(400),
     SERVER_ERROR(500);
