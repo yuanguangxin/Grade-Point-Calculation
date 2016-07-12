@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="307e4357-16c0-43d6-a003-29f4f8a990a2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-dao/src/main/java/edu/hlju/csti/web/sq/dao/cache/LocalCache.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-dao/src/main/java/edu/hlju/csti/web/sq/dao/cache/Redis.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-dao/src/main/java/edu/hlju/csti/web/sq/dao/mapper/UserKeyMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-dao/src/main/java/edu/hlju/csti/web/sq/dao/mapper/UserKeySqlProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-dao/src/main/resources/log4j.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-dao/src/test/java/edu/hlju/csti/web/sq/dao/cache/RedisTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-model/src/main/java/edu/hlju/csti/web/sq/model/UserKey.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-model/src/main/java/edu/hlju/csti/web/sq/model/UserKeyExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-service/src/main/java/edu/hlju/csti/web/sq/service/LoginService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-util/src/main/java/edu/hlju/csti/web/sq/util/HttpClientUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-util/src/main/resources/log4j.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-util/src/test/java/edu/hlju/csti/web/sq/util/RSAUtilTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/java/edu/hlju/csti/web/sq/controller/TestController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/WEB-INF/pages/testRsa.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/score-query-util/src/main/java/edu/hlju/csti/web/sq/util/Dates.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/score-query-util/src/main/java/edu/hlju/csti/web/sq/util/EncryUtil.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/score-query-dao/src/main/java/edu/hlju/csti/web/sq/mapper/RankMapper.java" afterPath="$PROJECT_DIR$/score-query-dao/src/main/java/edu/hlju/csti/web/sq/dao/mapper/RankMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/score-query-dao/src/main/java/edu/hlju/csti/web/sq/mapper/RankSqlProvider.java" afterPath="$PROJECT_DIR$/score-query-dao/src/main/java/edu/hlju/csti/web/sq/dao/mapper/RankSqlProvider.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/score-query-dao/src/main/java/edu/hlju/csti/web/sq/mapper/StudentMapper.java" afterPath="$PROJECT_DIR$/score-query-dao/src/main/java/edu/hlju/csti/web/sq/dao/mapper/StudentMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/score-query-dao/src/main/java/edu/hlju/csti/web/sq/mapper/StudentSqlProvider.java" afterPath="$PROJECT_DIR$/score-query-dao/src/main/java/edu/hlju/csti/web/sq/dao/mapper/StudentSqlProvider.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-dao/pom.xml" afterPath="$PROJECT_DIR$/score-query-dao/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-dao/score-query-dao.iml" afterPath="$PROJECT_DIR$/score-query-dao/score-query-dao.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-dao/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/score-query-dao/src/main/resources/generatorConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-dao/src/main/resources/grade_point.sql" afterPath="$PROJECT_DIR$/score-query-dao/src/main/resources/grade_point.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-dao/src/main/resources/spring-dao.xml" afterPath="$PROJECT_DIR$/score-query-dao/src/main/resources/spring-dao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-service/score-query-service.iml" afterPath="$PROJECT_DIR$/score-query-service/score-query-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-service/src/main/java/edu/hlju/csti/web/sq/service/RankService.java" afterPath="$PROJECT_DIR$/score-query-service/src/main/java/edu/hlju/csti/web/sq/service/RankService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-service/src/main/java/edu/hlju/csti/web/sq/service/StudentService.java" afterPath="$PROJECT_DIR$/score-query-service/src/main/java/edu/hlju/csti/web/sq/service/StudentService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-service/src/main/resources/config.properties" afterPath="$PROJECT_DIR$/score-query-service/src/main/resources/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-util/pom.xml" afterPath="$PROJECT_DIR$/score-query-util/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-util/score-query-util.iml" afterPath="$PROJECT_DIR$/score-query-util/score-query-util.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-util/src/main/java/edu/hlju/csti/web/sq/util/AES.java" afterPath="$PROJECT_DIR$/score-query-util/src/main/java/edu/hlju/csti/web/sq/util/AES.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-web/pom.xml" afterPath="$PROJECT_DIR$/score-query-web/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-web/score-query-web.iml" afterPath="$PROJECT_DIR$/score-query-web/score-query-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-web/src/main/webapp/assets/js/jquery.cookie.js" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/assets/js/jquery.cookie.js" />
     </list>
     <ignored path="score-query.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,6 +22,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Grade-Point-Calculation$Redis.coverage" NAME="Redis Coverage Results" MODIFIED="1468300132668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hlju.csti.web.sq.dao.cache.*</FILTER>
+    </SUITE>
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -237,6 +206,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="modificationStamps">
@@ -740,6 +712,7 @@
     <property name="SearchEverywhereHistoryKey" value="maven&#9;ACTION&#9;ActivateMavenProjectsToolWindow" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="FullScreen" value="true" />
+    <property name="GO_FMT" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -1370,8 +1343,16 @@
       <workItem from="1468224881657" duration="932000" />
       <workItem from="1468225978369" duration="2268000" />
       <workItem from="1468228820704" duration="188000" />
-      <workItem from="1468229433943" duration="17206000" />
+      <workItem from="1468229433943" duration="17354000" />
     </task>
+    <task id="LOCAL-00001" summary="增加缓存框架">
+      <created>1468300015287</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1468300015287</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1383,7 +1364,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44379000" />
+    <option name="totallyTimeSpent" value="44527000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1396,32 +1377,33 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39941692" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3492696" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3492696" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.228125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39941692" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1469,6 +1451,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="增加缓存框架" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加缓存框架" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
