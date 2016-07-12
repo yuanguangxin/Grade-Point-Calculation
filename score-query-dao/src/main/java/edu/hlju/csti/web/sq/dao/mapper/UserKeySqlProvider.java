@@ -1,58 +1,73 @@
-package edu.hlju.csti.web.sq.mapper;
+package edu.hlju.csti.web.sq.dao.mapper;
 
-import edu.hlju.csti.web.sq.model.Student;
-import edu.hlju.csti.web.sq.model.StudentExample.Criteria;
-import edu.hlju.csti.web.sq.model.StudentExample.Criterion;
-import edu.hlju.csti.web.sq.model.StudentExample;
+import edu.hlju.csti.web.sq.model.UserKey;
+import edu.hlju.csti.web.sq.model.UserKeyExample.Criteria;
+import edu.hlju.csti.web.sq.model.UserKeyExample.Criterion;
+import edu.hlju.csti.web.sq.model.UserKeyExample;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.jdbc.SQL;
 
-public class StudentSqlProvider {
+public class UserKeySqlProvider {
 
-    public String countByExample(StudentExample example) {
+    public String countByExample(UserKeyExample example) {
         SQL sql = new SQL();
-        sql.SELECT("count(*)").FROM("student");
+        sql.SELECT("count(*)").FROM("user_key");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String deleteByExample(StudentExample example) {
+    public String deleteByExample(UserKeyExample example) {
         SQL sql = new SQL();
-        sql.DELETE_FROM("student");
+        sql.DELETE_FROM("user_key");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String insertSelective(Student record) {
+    public String insertSelective(UserKey record) {
         SQL sql = new SQL();
-        sql.INSERT_INTO("student");
+        sql.INSERT_INTO("user_key");
         
         if (record.getId() != null) {
-            sql.VALUES("id", "#{id,jdbcType=INTEGER}");
+            sql.VALUES("id", "#{id,jdbcType=BIGINT}");
         }
         
-        if (record.getUsername() != null) {
-            sql.VALUES("username", "#{username,jdbcType=VARCHAR}");
+        if (record.getSchoolNum() != null) {
+            sql.VALUES("school_num", "#{schoolNum,jdbcType=VARCHAR}");
         }
         
-        if (record.getPassword() != null) {
-            sql.VALUES("password", "#{password,jdbcType=VARCHAR}");
+        if (record.getPublicKey() != null) {
+            sql.VALUES("public_key", "#{publicKey,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getPrivateKey() != null) {
+            sql.VALUES("private_key", "#{privateKey,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getLoginCookie() != null) {
+            sql.VALUES("login_cookie", "#{loginCookie,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getUpdateDate() != null) {
+            sql.VALUES("update_date", "#{updateDate,jdbcType=TIMESTAMP}");
         }
         
         return sql.toString();
     }
 
-    public String selectByExample(StudentExample example) {
+    public String selectByExample(UserKeyExample example) {
         SQL sql = new SQL();
         if (example != null && example.isDistinct()) {
             sql.SELECT_DISTINCT("id");
         } else {
             sql.SELECT("id");
         }
-        sql.SELECT("username");
-        sql.SELECT("password");
-        sql.FROM("student");
+        sql.SELECT("school_num");
+        sql.SELECT("public_key");
+        sql.SELECT("private_key");
+        sql.SELECT("login_cookie");
+        sql.SELECT("update_date");
+        sql.FROM("user_key");
         applyWhere(sql, example, false);
         
         if (example != null && example.getOrderByClause() != null) {
@@ -63,22 +78,34 @@ public class StudentSqlProvider {
     }
 
     public String updateByExampleSelective(Map<String, Object> parameter) {
-        Student record = (Student) parameter.get("record");
-        StudentExample example = (StudentExample) parameter.get("example");
+        UserKey record = (UserKey) parameter.get("record");
+        UserKeyExample example = (UserKeyExample) parameter.get("example");
         
         SQL sql = new SQL();
-        sql.UPDATE("student");
+        sql.UPDATE("user_key");
         
         if (record.getId() != null) {
-            sql.SET("id = #{record.id,jdbcType=INTEGER}");
+            sql.SET("id = #{record.id,jdbcType=BIGINT}");
         }
         
-        if (record.getUsername() != null) {
-            sql.SET("username = #{record.username,jdbcType=VARCHAR}");
+        if (record.getSchoolNum() != null) {
+            sql.SET("school_num = #{record.schoolNum,jdbcType=VARCHAR}");
         }
         
-        if (record.getPassword() != null) {
-            sql.SET("password = #{record.password,jdbcType=VARCHAR}");
+        if (record.getPublicKey() != null) {
+            sql.SET("public_key = #{record.publicKey,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getPrivateKey() != null) {
+            sql.SET("private_key = #{record.privateKey,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getLoginCookie() != null) {
+            sql.SET("login_cookie = #{record.loginCookie,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getUpdateDate() != null) {
+            sql.SET("update_date = #{record.updateDate,jdbcType=TIMESTAMP}");
         }
         
         applyWhere(sql, example, true);
@@ -87,35 +114,50 @@ public class StudentSqlProvider {
 
     public String updateByExample(Map<String, Object> parameter) {
         SQL sql = new SQL();
-        sql.UPDATE("student");
+        sql.UPDATE("user_key");
         
-        sql.SET("id = #{record.id,jdbcType=INTEGER}");
-        sql.SET("username = #{record.username,jdbcType=VARCHAR}");
-        sql.SET("password = #{record.password,jdbcType=VARCHAR}");
+        sql.SET("id = #{record.id,jdbcType=BIGINT}");
+        sql.SET("school_num = #{record.schoolNum,jdbcType=VARCHAR}");
+        sql.SET("public_key = #{record.publicKey,jdbcType=VARCHAR}");
+        sql.SET("private_key = #{record.privateKey,jdbcType=VARCHAR}");
+        sql.SET("login_cookie = #{record.loginCookie,jdbcType=VARCHAR}");
+        sql.SET("update_date = #{record.updateDate,jdbcType=TIMESTAMP}");
         
-        StudentExample example = (StudentExample) parameter.get("example");
+        UserKeyExample example = (UserKeyExample) parameter.get("example");
         applyWhere(sql, example, true);
         return sql.toString();
     }
 
-    public String updateByPrimaryKeySelective(Student record) {
+    public String updateByPrimaryKeySelective(UserKey record) {
         SQL sql = new SQL();
-        sql.UPDATE("student");
+        sql.UPDATE("user_key");
         
-        if (record.getUsername() != null) {
-            sql.SET("username = #{username,jdbcType=VARCHAR}");
+        if (record.getSchoolNum() != null) {
+            sql.SET("school_num = #{schoolNum,jdbcType=VARCHAR}");
         }
         
-        if (record.getPassword() != null) {
-            sql.SET("password = #{password,jdbcType=VARCHAR}");
+        if (record.getPublicKey() != null) {
+            sql.SET("public_key = #{publicKey,jdbcType=VARCHAR}");
         }
         
-        sql.WHERE("id = #{id,jdbcType=INTEGER}");
+        if (record.getPrivateKey() != null) {
+            sql.SET("private_key = #{privateKey,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getLoginCookie() != null) {
+            sql.SET("login_cookie = #{loginCookie,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getUpdateDate() != null) {
+            sql.SET("update_date = #{updateDate,jdbcType=TIMESTAMP}");
+        }
+        
+        sql.WHERE("id = #{id,jdbcType=BIGINT}");
         
         return sql.toString();
     }
 
-    protected void applyWhere(SQL sql, StudentExample example, boolean includeExamplePhrase) {
+    protected void applyWhere(SQL sql, UserKeyExample example, boolean includeExamplePhrase) {
         if (example == null) {
             return;
         }

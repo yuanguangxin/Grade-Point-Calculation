@@ -1,7 +1,7 @@
 package edu.hlju.csti.web.sq.service;
 
 
-import edu.hlju.csti.web.sq.mapper.RankMapper;
+import edu.hlju.csti.web.sq.dao.mapper.RankMapper;
 import edu.hlju.csti.web.sq.model.Rank;
 import edu.hlju.csti.web.sq.model.RankExample;
 import org.springframework.beans.factory.annotation.Autowired;

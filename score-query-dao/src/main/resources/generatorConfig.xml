@@ -16,11 +16,11 @@
         </javaTypeResolver>
 
         <javaModelGenerator targetPackage="edu.hlju.csti.web.sq.model"
-                            targetProject="/Users/timeliar/Desktop/score-query/score-query-model/src/main/java"/>
-        <sqlMapGenerator targetPackage="edu.hlju.csti.web.sq.mapper"
-                         targetProject="/Users/timeliar/Desktop/score-query/score-query-dao/src/main/java"/>
-        <javaClientGenerator targetPackage="edu.hlju.csti.web.sq.mapper"
-                             targetProject="/Users/timeliar/Desktop/score-query/score-query-dao/src/main/java"
+                            targetProject="/Users/timeliar/Desktop/Grade-Point-Calculation/score-query-model/src/main/java"/>
+        <sqlMapGenerator targetPackage="edu.hlju.csti.web.sq.dao.mapper"
+                         targetProject="/Users/timeliar/Desktop/Grade-Point-Calculation/score-query-dao/src/main/java"/>
+        <javaClientGenerator targetPackage="edu.hlju.csti.web.sq.dao.mapper"
+                             targetProject="/Users/timeliar/Desktop/Grade-Point-Calculation/score-query-dao/src/main/java"
                              type="ANNOTATEDMAPPER"/>
 
         <!-- <table schema="test" tableName="feedback"  domainObjectName="VFeedback" /> -->
@@ -40,14 +40,14 @@
         <!--enableCountByExample="false"-->
         <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
         <!--enableSelectByExample="false" selectByExampleQueryId="false"/>-->
-        <table schema="grade_point" tableName="rank" domainObjectName="Rank"
+        <table schema="grade_point" tableName="user_key" domainObjectName="UserKey"
                enableCountByExample="true"
                enableUpdateByExample="true" enableDeleteByExample="true"
                enableSelectByExample="true" selectByExampleQueryId="true"/>
-        <table schema="grade_point" tableName="student" domainObjectName="Student"
-               enableCountByExample="true"
-               enableUpdateByExample="true" enableDeleteByExample="true"
-               enableSelectByExample="true" selectByExampleQueryId="true"/>
+        <!--<table schema="grade_point" tableName="student" domainObjectName="Student"-->
+        <!--enableCountByExample="true"-->
+        <!--enableUpdateByExample="true" enableDeleteByExample="true"-->
+        <!--enableSelectByExample="true" selectByExampleQueryId="true"/>-->
         <!--<table schema="db_superpei" tableName="user_like" domainObjectName="UserLike"-->
         <!--enableCountByExample="false"-->
         <!--enableUpdateByExample="false" enableDeleteByExample="false"-->

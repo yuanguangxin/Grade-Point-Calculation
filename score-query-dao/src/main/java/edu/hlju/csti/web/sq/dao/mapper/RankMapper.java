@@ -1,4 +1,4 @@
-package edu.hlju.csti.web.sq.mapper;
+package edu.hlju.csti.web.sq.dao.mapper;
 
 import edu.hlju.csti.web.sq.model.Rank;
 import edu.hlju.csti.web.sq.model.RankExample;

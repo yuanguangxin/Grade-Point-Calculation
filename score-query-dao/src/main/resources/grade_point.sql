@@ -11,7 +11,7 @@
 
  Date: 07/08/2016 22:24:26 PM
 */
-use grade_point;
+USE grade_point;
 SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -20,22 +20,38 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `rank`;
 CREATE TABLE `rank` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `stu_id` varchar(255) NOT NULL,
-  `info` varchar(255) NOT NULL,
-  `point` varchar(255) NOT NULL,
+  `id`     INT(11)      NOT NULL AUTO_INCREMENT,
+  `stu_id` VARCHAR(255) NOT NULL,
+  `info`   VARCHAR(255) NOT NULL,
+  `point`  VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+)
+  ENGINE = InnoDB
+  AUTO_INCREMENT = 8
+  DEFAULT CHARSET = utf8;
 
 -- ----------------------------
 --  Table structure for `student`
 -- ----------------------------
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
+  `id`       INT(11) NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(255)     DEFAULT NULL,
+  `password` VARCHAR(255)     DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=164 DEFAULT CHARSET=utf8;
+)
+  ENGINE = InnoDB
+  AUTO_INCREMENT = 164
+  DEFAULT CHARSET = utf8;
 
+DROP TABLE IF EXISTS `user_key`;
+CREATE TABLE `user_key` (
+  `id`           BIGINT      NOT NULL AUTO_INCREMENT,
+  `school_num`   VARCHAR(45) NOT NULL UNIQUE,
+  `public_key`   VARCHAR(1024)        DEFAULT NULL,
+  `private_key`  VARCHAR(1024)        DEFAULT NULL,
+  `login_cookie` VARCHAR(1024)        DEFAULT NULL,
+  `update_date`  DATETIME,
+  PRIMARY KEY (id)
+);
 SET FOREIGN_KEY_CHECKS = 1;

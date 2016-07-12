@@ -1,9 +1,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:component-scan base-package="edu.hlju.csti.web.sq.dao"/>
     <!--使用c3p0配置数据源-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close"
@@ -16,12 +17,27 @@
           p:initialPoolSize="2"
           p:maxIdleTime="30"/>
 
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="20"/>
+        <property name="maxWaitMillis" value="1000"/>
+        <property name="testOnBorrow" value="false"/>
+        <property name="testOnReturn" value="false"/>
+    </bean>
+
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <constructor-arg index="0" ref="jedisPoolConfig"/>
+        <constructor-arg index="1" value="127.0.0.1"/>
+        <constructor-arg index="2" value="6379"/>
+        <constructor-arg index="3" value="2000"/>
+        <constructor-arg index="4" value="admin"/>
+    </bean>
+
     <!--配置sqlSessionFactory-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="edu.hlju.csti.web.sq.mapper"/>
+        <property name="basePackage" value="edu.hlju.csti.web.sq.dao.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
@@ -32,12 +48,17 @@
     <!--</bean>-->
 
     <bean id="studentMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="edu.hlju.csti.web.sq.mapper.StudentMapper"/>
+        <property name="mapperInterface" value="edu.hlju.csti.web.sq.dao.mapper.StudentMapper"/>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
 
     <bean id="rankMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="edu.hlju.csti.web.sq.mapper.RankMapper"/>
+        <property name="mapperInterface" value="edu.hlju.csti.web.sq.dao.mapper.RankMapper"/>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
+    <bean id="userKeyMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="edu.hlju.csti.web.sq.dao.mapper.UserKeyMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
 </beans>

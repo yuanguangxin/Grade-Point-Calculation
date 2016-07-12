@@ -1,7 +1,7 @@
 package edu.hlju.csti.web.sq.service;
 
 
-import edu.hlju.csti.web.sq.mapper.StudentMapper;
+import edu.hlju.csti.web.sq.dao.mapper.StudentMapper;
 import edu.hlju.csti.web.sq.model.Student;
 import edu.hlju.csti.web.sq.model.StudentExample;
 import org.springframework.beans.factory.annotation.Autowired;

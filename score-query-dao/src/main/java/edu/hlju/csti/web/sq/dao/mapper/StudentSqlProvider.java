@@ -1,63 +1,58 @@
-package edu.hlju.csti.web.sq.mapper;
+package edu.hlju.csti.web.sq.dao.mapper;
 
-import edu.hlju.csti.web.sq.model.Rank;
-import edu.hlju.csti.web.sq.model.RankExample.Criteria;
-import edu.hlju.csti.web.sq.model.RankExample.Criterion;
-import edu.hlju.csti.web.sq.model.RankExample;
+import edu.hlju.csti.web.sq.model.Student;
+import edu.hlju.csti.web.sq.model.StudentExample.Criteria;
+import edu.hlju.csti.web.sq.model.StudentExample.Criterion;
+import edu.hlju.csti.web.sq.model.StudentExample;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.jdbc.SQL;
 
-public class RankSqlProvider {
+public class StudentSqlProvider {
 
-    public String countByExample(RankExample example) {
+    public String countByExample(StudentExample example) {
         SQL sql = new SQL();
-        sql.SELECT("count(*)").FROM("rank");
+        sql.SELECT("count(*)").FROM("student");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String deleteByExample(RankExample example) {
+    public String deleteByExample(StudentExample example) {
         SQL sql = new SQL();
-        sql.DELETE_FROM("rank");
+        sql.DELETE_FROM("student");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String insertSelective(Rank record) {
+    public String insertSelective(Student record) {
         SQL sql = new SQL();
-        sql.INSERT_INTO("rank");
+        sql.INSERT_INTO("student");
         
         if (record.getId() != null) {
             sql.VALUES("id", "#{id,jdbcType=INTEGER}");
         }
         
-        if (record.getStuId() != null) {
-            sql.VALUES("stu_id", "#{stuId,jdbcType=VARCHAR}");
+        if (record.getUsername() != null) {
+            sql.VALUES("username", "#{username,jdbcType=VARCHAR}");
         }
         
-        if (record.getInfo() != null) {
-            sql.VALUES("info", "#{info,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getPoint() != null) {
-            sql.VALUES("point", "#{point,jdbcType=VARCHAR}");
+        if (record.getPassword() != null) {
+            sql.VALUES("password", "#{password,jdbcType=VARCHAR}");
         }
         
         return sql.toString();
     }
 
-    public String selectByExample(RankExample example) {
+    public String selectByExample(StudentExample example) {
         SQL sql = new SQL();
         if (example != null && example.isDistinct()) {
             sql.SELECT_DISTINCT("id");
         } else {
             sql.SELECT("id");
         }
-        sql.SELECT("stu_id");
-        sql.SELECT("info");
-        sql.SELECT("point");
-        sql.FROM("rank");
+        sql.SELECT("username");
+        sql.SELECT("password");
+        sql.FROM("student");
         applyWhere(sql, example, false);
         
         if (example != null && example.getOrderByClause() != null) {
@@ -68,26 +63,22 @@ public class RankSqlProvider {
     }
 
     public String updateByExampleSelective(Map<String, Object> parameter) {
-        Rank record = (Rank) parameter.get("record");
-        RankExample example = (RankExample) parameter.get("example");
+        Student record = (Student) parameter.get("record");
+        StudentExample example = (StudentExample) parameter.get("example");
         
         SQL sql = new SQL();
-        sql.UPDATE("rank");
+        sql.UPDATE("student");
         
         if (record.getId() != null) {
             sql.SET("id = #{record.id,jdbcType=INTEGER}");
         }
         
-        if (record.getStuId() != null) {
-            sql.SET("stu_id = #{record.stuId,jdbcType=VARCHAR}");
+        if (record.getUsername() != null) {
+            sql.SET("username = #{record.username,jdbcType=VARCHAR}");
         }
         
-        if (record.getInfo() != null) {
-            sql.SET("info = #{record.info,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getPoint() != null) {
-            sql.SET("point = #{record.point,jdbcType=VARCHAR}");
+        if (record.getPassword() != null) {
+            sql.SET("password = #{record.password,jdbcType=VARCHAR}");
         }
         
         applyWhere(sql, example, true);
@@ -96,32 +87,27 @@ public class RankSqlProvider {
 
     public String updateByExample(Map<String, Object> parameter) {
         SQL sql = new SQL();
-        sql.UPDATE("rank");
+        sql.UPDATE("student");
         
         sql.SET("id = #{record.id,jdbcType=INTEGER}");
-        sql.SET("stu_id = #{record.stuId,jdbcType=VARCHAR}");
-        sql.SET("info = #{record.info,jdbcType=VARCHAR}");
-        sql.SET("point = #{record.point,jdbcType=VARCHAR}");
+        sql.SET("username = #{record.username,jdbcType=VARCHAR}");
+        sql.SET("password = #{record.password,jdbcType=VARCHAR}");
         
-        RankExample example = (RankExample) parameter.get("example");
+        StudentExample example = (StudentExample) parameter.get("example");
         applyWhere(sql, example, true);
         return sql.toString();
     }
 
-    public String updateByPrimaryKeySelective(Rank record) {
+    public String updateByPrimaryKeySelective(Student record) {
         SQL sql = new SQL();
-        sql.UPDATE("rank");
+        sql.UPDATE("student");
         
-        if (record.getStuId() != null) {
-            sql.SET("stu_id = #{stuId,jdbcType=VARCHAR}");
+        if (record.getUsername() != null) {
+            sql.SET("username = #{username,jdbcType=VARCHAR}");
         }
         
-        if (record.getInfo() != null) {
-            sql.SET("info = #{info,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getPoint() != null) {
-            sql.SET("point = #{point,jdbcType=VARCHAR}");
+        if (record.getPassword() != null) {
+            sql.SET("password = #{password,jdbcType=VARCHAR}");
         }
         
         sql.WHERE("id = #{id,jdbcType=INTEGER}");
@@ -129,7 +115,7 @@ public class RankSqlProvider {
         return sql.toString();
     }
 
-    protected void applyWhere(SQL sql, RankExample example, boolean includeExamplePhrase) {
+    protected void applyWhere(SQL sql, StudentExample example, boolean includeExamplePhrase) {
         if (example == null) {
             return;
         }

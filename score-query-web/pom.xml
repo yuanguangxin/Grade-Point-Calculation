@@ -102,6 +102,7 @@
                 <configuration>
                     <path>/</path>
                     <port>8888</port>
+                    <charset>UTF-8</charset>
                 </configuration>
             </plugin>
         </plugins>
