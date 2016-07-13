@@ -1,47 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="307e4357-16c0-43d6-a003-29f4f8a990a2" name="Default" comment="增加缓存框架">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/assets/img/404.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-model/src/main/java/edu/hlju/csti/web/sq/io/LoginInput.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-model/src/main/java/edu/hlju/csti/web/sq/io/OutputSimple.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/java/edu/hlju/csti/web/sq/controller/IndexController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/java/edu/hlju/csti/web/sq/controller/LoginController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/WEB-INF/pages/import/footer.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/WEB-INF/pages/import/login-core.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/WEB-INF/pages/import/navbar.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/WEB-INF/pages/import/static.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/WEB-INF/pages/index.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/WEB-INF/pages/login-test.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/assets/css/animate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/assets/js/bootstrap-notify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/assets/js/bootstrap-notify.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/assets/js/jquery.base64.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/assets/js/tools.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/score-query-dao/src/main/java/edu/hlju/csti/web/sq/dao/cache/Redis.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/score-query-dao/src/test/java/edu/hlju/csti/web/sq/dao/cache/RedisTest.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/score-query-web/src/main/webapp/assets/js/jquery.js" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/assets/js/jquery-3.0.0.min.js" />
+    <list default="true" id="307e4357-16c0-43d6-a003-29f4f8a990a2" name="Default" comment="实现登录">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-dao/pom.xml" afterPath="$PROJECT_DIR$/score-query-dao/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-dao/score-query-dao.iml" afterPath="$PROJECT_DIR$/score-query-dao/score-query-dao.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-dao/src/main/java/edu/hlju/csti/web/sq/dao/mapper/UserKeyMapper.java" afterPath="$PROJECT_DIR$/score-query-dao/src/main/java/edu/hlju/csti/web/sq/dao/mapper/UserKeyMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-dao/src/main/resources/spring-dao.xml" afterPath="$PROJECT_DIR$/score-query-dao/src/main/resources/spring-dao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-service/pom.xml" afterPath="$PROJECT_DIR$/score-query-service/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-service/score-query-service.iml" afterPath="$PROJECT_DIR$/score-query-service/score-query-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-service/src/main/java/edu/hlju/csti/web/sq/service/LoginService.java" afterPath="$PROJECT_DIR$/score-query-service/src/main/java/edu/hlju/csti/web/sq/service/LoginService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-util/pom.xml" afterPath="$PROJECT_DIR$/score-query-util/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-util/src/main/java/edu/hlju/csti/web/sq/util/Digest.java" afterPath="$PROJECT_DIR$/score-query-util/src/main/java/edu/hlju/csti/web/sq/util/Digest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-util/src/main/java/edu/hlju/csti/web/sq/util/HttpClientUtil.java" afterPath="$PROJECT_DIR$/score-query-util/src/main/java/edu/hlju/csti/web/sq/util/HttpClientUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-util/src/test/java/edu/hlju/csti/web/sq/util/CookieUtilTest.java" afterPath="$PROJECT_DIR$/score-query-util/src/test/java/edu/hlju/csti/web/sq/util/CookieUtilTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-web/pom.xml" afterPath="$PROJECT_DIR$/score-query-web/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-web/score-query-web.iml" afterPath="$PROJECT_DIR$/score-query-web/score-query-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-web/src/main/java/edu/hlju/csti/web/sq/controller/StudentController.java" afterPath="$PROJECT_DIR$/score-query-web/src/main/java/edu/hlju/csti/web/sq/controller/StudentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-web/src/main/resources/web_conf.properties" afterPath="$PROJECT_DIR$/score-query-web/src/main/resources/web_conf.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-web/src/main/webapp/WEB-INF/pages/404.jsp" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/WEB-INF/pages/404.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-web/src/main/webapp/WEB-INF/pages/detail.jsp" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/WEB-INF/pages/detail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-web/src/main/webapp/WEB-INF/pages/testRsa.jsp" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/WEB-INF/pages/testRsa.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/score-query-web/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/score-query-web/src/main/webapp/WEB-INF/web.xml" />
     </list>
     <ignored path="score-query.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/score-query-service/src/main/java/edu/hlju/csti/web/sq/service/LoginService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="484">
-              <caret line="141" column="41" selection-start-line="141" selection-start-column="41" selection-end-line="141" selection-end-column="41" />
+              <caret line="141" column="53" selection-start-line="141" selection-start-column="42" selection-end-line="141" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -211,6 +172,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="PUSH_TAGS">
       <GitPushTagMode />
     </option>
@@ -1118,7 +1084,7 @@
       <workItem from="1468229433943" duration="17354000" />
       <workItem from="1468300768961" duration="179000" />
       <workItem from="1468303710937" duration="674000" />
-      <workItem from="1468375456850" duration="19293000" />
+      <workItem from="1468375456850" duration="19404000" />
     </task>
     <task id="LOCAL-00001" summary="增加缓存框架">
       <created>1468300015287</created>
@@ -1127,7 +1093,14 @@
       <option name="project" value="LOCAL" />
       <updated>1468300015287</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="实现登录">
+      <created>1468400805492</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1468400805492</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1151,7 +1124,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64673000" />
+    <option name="totallyTimeSpent" value="64784000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1243,7 +1216,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="增加缓存框架" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加缓存框架" />
+    <MESSAGE value="实现登录" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现登录" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1676,7 +1650,7 @@
     <entry file="file://$PROJECT_DIR$/score-query-service/src/main/java/edu/hlju/csti/web/sq/service/LoginService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
-          <caret line="141" column="41" selection-start-line="141" selection-start-column="41" selection-end-line="141" selection-end-column="41" />
+          <caret line="141" column="53" selection-start-line="141" selection-start-column="42" selection-end-line="141" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
