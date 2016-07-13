@@ -27,10 +27,17 @@ import java.util.Map;
  */
 public class HttpClientUtil {
     private static Logger logger = LoggerFactory.getLogger(HttpClientUtil.class);
+    private CloseableHttpClient client = HttpClientBuilder.create().build();
 
-    public static HttpResponse executeGet(String url, Map<String, String> params, Map<String, String> headers, String cookieStr) {
-        HttpClientBuilder builder = HttpClientBuilder.create();
-        CloseableHttpClient client = builder.build();
+    public HttpResponse executeGet(String url) {
+        return executeGet(url, null, null, null);
+    }
+
+    public HttpResponse executrGet(String url, Map<String, String> params) {
+        return executeGet(url, params, null, null);
+    }
+
+    public HttpResponse executeGet(String url, Map<String, String> params, Map<String, String> headers, String cookieStr) {
         try {
             URI uri = new URI(url);
             if (params != null) {
@@ -58,9 +65,7 @@ public class HttpClientUtil {
         return null;
     }
 
-    public static HttpResponse executePost(String url, Object param, Map<String, String> headers, String cookieStr) {
-        HttpClientBuilder builder = HttpClientBuilder.create();
-        CloseableHttpClient client = builder.build();
+    public HttpResponse executePost(String url, Object param, Map<String, String> headers, String cookieStr) {
         try {
             URI uri = new URI(url);
             HttpPost post = new HttpPost(uri);

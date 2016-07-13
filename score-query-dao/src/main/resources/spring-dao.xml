@@ -8,8 +8,8 @@
     <!--使用c3p0配置数据源-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close"
-          p:driverClass="com.mysql.jdbc.Driver"
-          p:jdbcUrl="jdbc:mysql://localhost/grade_point"
+          p:driverClass="com.mysql.cj.jdbc.Driver"
+          p:jdbcUrl="jdbc:mysql://localhost/grade_point?useSSL=false"
           p:user="root"
           p:password="root"
           p:maxPoolSize="40"
@@ -24,13 +24,26 @@
         <property name="testOnReturn" value="false"/>
     </bean>
 
-    <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+    <bean id="jedisConnectionFactory"
+          class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="hostName" value="127.0.0.1"/>
+        <property name="password" value="admin"/>
+        <property name="port" value="6379"/>
+        <property name="usePool" value="true"/>
         <constructor-arg index="0" ref="jedisPoolConfig"/>
-        <constructor-arg index="1" value="127.0.0.1"/>
-        <constructor-arg index="2" value="6379"/>
-        <constructor-arg index="3" value="2000"/>
-        <constructor-arg index="4" value="admin"/>
     </bean>
+
+    <bean
+            id="stringRedisSerializer"
+            class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+
+    <bean
+            id="redisTemplate"
+            class="org.springframework.data.redis.core.RedisTemplate"
+            p:connectionFactory-ref="jedisConnectionFactory"
+            p:keySerializer-ref="stringRedisSerializer"
+            p:hashKeySerializer-ref="stringRedisSerializer"
+    />
 
     <!--配置sqlSessionFactory-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

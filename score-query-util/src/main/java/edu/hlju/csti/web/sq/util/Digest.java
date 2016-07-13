@@ -9,8 +9,8 @@ import java.util.Arrays;
 
 public class Digest {
 	private static final Logger log = Logger.getLogger(Digest.class);
-	public static final String ENCODE = "UTF-8"; 
-	
+	public static final String ENCODE = "UTF-8";
+
 	public static String signMD5(String aValue, String encoding) {
 		try {
 			byte[] input = aValue.getBytes(encoding);

@@ -36,10 +36,10 @@ public class StudentController {
     private String codeUrl;
 
 
-    @RequestMapping(value = {"/login", "/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
     public ModelAndView login() {
-        codeUrl = codeUrl.replace("[n]", String.valueOf(RandomUtils.nextInt(1,3)));
-        return new ModelAndView("login","CODE_IMG_URL",codeUrl);
+        codeUrl = codeUrl.replace("[n]", String.valueOf(RandomUtils.nextInt(1, 3)));
+        return new ModelAndView("login", "CODE_IMG_URL", codeUrl);
     }
 
     @RequestMapping(value = "/submit", method = RequestMethod.POST)

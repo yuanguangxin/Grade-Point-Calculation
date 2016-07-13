@@ -8,7 +8,7 @@
     <title>成绩详情</title>
     <link rel="stylesheet" href="<c:url value="/assets/css/bootstrap.min.css"/>">
     <link rel="stylesheet" href="<c:url value="/assets/css/login.css"/>">
-    <script src="<c:url value="/assets/js/jquery.js"/>"></script>
+    <script src="<c:url value="/assets/js/jquery-3.0.0.min.js"/>"></script>
     <script src="<c:url value="/assets/js/bootstrap.min.js"/>"></script>
     <script src="<c:url value="/assets/js/echarts.common.min.js"/>"></script>
 </head>
