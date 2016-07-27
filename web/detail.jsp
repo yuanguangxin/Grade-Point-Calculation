@@ -31,6 +31,14 @@
             <span style="font-size: 1.1em;color: indianred">希望大家Star</span>,给予我信心,另外有兴趣小伙伴,欢迎给我发PR。
         </td>
     </tr>
+    <tr>
+        <td>
+            3.刚刚看了下，网站上线不到一周访问量破2万了，感谢大家的支持。
+            另外由于访问量很高，所以本网站目前想多元化，不局限于成绩相关，希望大家多提意见。
+            当然，我们也会不断推出便携的福利，比如想到大家挂网络课的痛苦，所以想在开学后做一个网络课代挂的软件，希望大家多多关注。
+            还有! <a href="http://heidacf.cn/">http://heidacf.cn/</a>也可以访问啦!
+        </td>
+    </tr>
 </table>
 <hr/>
 <br/>
@@ -147,6 +155,94 @@
 <br/>
 <div class="form-group" style="width: 80%;margin: 0 auto">
     <button type="button" style="outline: none;" class="btn btn-success btn-group-sm">
+        绩点PK
+    </button>
+</div>
+<input type="hidden" value="${requestScope.stuId}" id="stuId">
+<div class="form-group" style="width: 80%;margin: 0 auto;margin-top: 10px">
+    <span>输入学号:</span>&nbsp;<input type="text" id="pk_id" style="width: 100px"/><button type="button" id="pk" style="outline: none;margin-left: 20px" class="btn btn-danger btn-group-sm">
+    PK!&nbsp;
+</button>
+</div>
+<script>
+    $(function () {
+        $("#pk").on("click",function () {
+            var a = $("#stuId").val();
+            var b = $("#pk_id").val();
+            $.post("/pk.action",{stuId:a,id:b},function (data,textStatus) {
+                if(data==0){
+                    alert("暂无数据π_π");
+                }else if(data==1){
+                    alert("You Win!(￣▽￣)");
+                }else if(data==3){
+                    alert("You Lose(・ˍ・*)");
+                }else if(data==2){
+                    alert("Draw (￣o￣) ");
+                }else if(data==4){
+                    alert("You won't beat yourself (,,• ₃ •,,)  ");
+                }
+            });
+        });
+    })
+</script>
+<br/>
+<div class="form-group" style="width: 80%;margin: 0 auto">
+    <button type="button" style="outline: none;" class="btn btn-success btn-group-sm">
+        留言(可以使劲夸我!)
+    </button>
+</div>
+<table class="table" style="width: 80%;margin: 0 auto">
+    <tr>
+        <td>留言人</td>
+        <td>留言信息</td>
+        <td>回复信息</td>
+        <td>留言时间</td>
+    </tr>
+    <c:forEach items="${requestScope.messages}" var="message">
+        <tr>
+            <td>${message.name}</td>
+            <td>${message.message}</td>
+            <c:choose>
+                <c:when test="${message.reply==null}">
+                    <td></td>
+                </c:when>
+                <c:when test="${message.reply!=null}">
+                    <td>${message.reply}</td>
+                </c:when>
+            </c:choose>
+            <td>${message.times}</td>
+        </tr>
+    </c:forEach>
+</table>
+<form>
+    <div class="form-group" style="width: 80%;margin: 0 auto">
+        <textarea name="message" style="resize: none" cols="20" rows="6"></textarea>
+    </div>
+    <input type="hidden" name="name" value="${requestScope.info}">
+    <div class="form-group" style="width: 80%;margin: 0 auto;margin-top: 10px">
+        <button type="button" id="leave" style="outline: none;" class="btn btn-default btn-group-sm">
+            确认留言
+        </button>
+    </div>
+</form>
+<script>
+    $(function () {
+        $("#leave").on("click",function () {
+           var a = $("textarea").val();
+           var b = $("input[name='name']").val();
+           if(a==""){
+               alert("请填写留言内容!");
+               return;
+           }
+           $.post("/addMessage.action",{message:a,name:b},function (data,textStatus) {
+               alert("留言成功");
+           });
+        });
+    })
+</script>
+<br/>
+<div class="form-group" style="width: 80%;margin: 0 auto">
+    <button type="button" style="outline: none;" class="btn btn-success btn-group-sm">
         成绩详情
     </button>
 </div>
@@ -242,5 +338,5 @@
         document.getElementById("cal").innerHTML = "选择项绩点:<span style='color:indianred'>"+last+"</span>";
     });
 </script>
-</body
+</body>
 </html>

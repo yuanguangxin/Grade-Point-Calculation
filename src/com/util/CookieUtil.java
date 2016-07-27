@@ -60,7 +60,7 @@ public class CookieUtil {
     }
 
     public void getCode(String us){
-        content = getRandom("GET", "http://ssfw1.hlju.edu.cn/ssfw/jwcaptcha.do", null, null, false, "/Users/yuanguangxin/Desktop/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img",us);
+        content = getRandom("GET", "http://ssfw3.hlju.edu.cn/ssfw/jwcaptcha.do", null, null, false, "/Users/yuanguangxin/Desktop/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img",us);
       //  InputStreamCopy isc=new InputStreamCopy("img/code"+us+".bmp","/Users/yuanguangxin/Desktop/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img/");
         if(content==null){
             return;
@@ -71,7 +71,7 @@ public class CookieUtil {
 
     public String[] getBody(String userCode,String password,String a) {
         String[] strings = new String[3];
-        String loginUrl = "http://ssfw2.hlju.edu.cn/ssfw/j_spring_ids_security_check";
+        String loginUrl = "http://ssfw3.hlju.edu.cn/ssfw/j_spring_ids_security_check";
         String rateReviewUrl = "http://ssfw3.hlju.edu.cn/ssfw/zhcx/cjxx.do";
         Map<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("j_username", userCode);
@@ -86,9 +86,9 @@ public class CookieUtil {
             return strings;
         }
         strings[0] = content.getBody();
-        content = curl("POST", "http://ssfw1.hlju.edu.cn/ssfw/zhcx/pyfa/faxxcj.do?pyfadm=05886", paramMap, resmap, false, "");
+        content = curl("POST", "http://ssfw3.hlju.edu.cn/ssfw/zhcx/pyfa/faxxcj.do?pyfadm=05886", paramMap, resmap, false, "");
         strings[1] = content.getBody();
-        content = curl("POST", "http://ssfw1.hlju.edu.cn/ssfw/index.do", paramMap, resmap, false, "");
+        content = curl("POST", "http://ssfw3.hlju.edu.cn/ssfw/index.do", paramMap, resmap, false, "");
         strings[2] = content.getBody();
         return strings;
     }

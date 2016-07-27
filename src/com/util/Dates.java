@@ -6,6 +6,12 @@ import java.util.Date;
 public class Dates {
     public static String getDate(){
         Date date =new Date();
+        SimpleDateFormat format=new SimpleDateFormat("yyyyMMddHHmmss");
+        String dates=format.format(date);
+        return dates;
+    }
+    public static String getDates(){
+        Date date =new Date();
         SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dates=format.format(date);
         return dates;

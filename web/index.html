@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+<div class="test">Test</div>
+<iframe id="a" src="login.html" height="500px" width="900px"></iframe>
+<script>
+    $(function () {
+        $(".test").on("click",function () {
+            var t = $("#a").contents().find("body").html();
+            alert(t);
+        });
+    })
+</script>
+</body>
+</html>

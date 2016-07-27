@@ -1,7 +1,9 @@
 package com.controller;
 
+import com.models.Message;
 import com.models.Rank;
 import com.models.Student;
+import com.service.MessageService;
 import com.service.RankService;
 import com.service.StudentService;
 import com.util.Analysis;
@@ -27,6 +29,15 @@ public class StudentController {
     public String path = "";
     private StudentService studentService;
     private RankService rankService;
+    private MessageService messageService;
+
+    public void setMessageService(MessageService messageService) {
+        this.messageService = messageService;
+    }
+
+    public MessageService getMessageService() {
+        return messageService;
+    }
 
     public RankService getRankService() {
         return rankService;
@@ -73,7 +84,7 @@ public class StudentController {
         if(list==null){
             return "login.html";
         }
-        studentService.login(student);
+        //studentService.login(student);
         Rank rank = new Rank();
         rank.setStuId(student.getUsername());
         request.setAttribute("grades",list.get(0));
@@ -117,6 +128,22 @@ public class StudentController {
         request.setAttribute("poi",s);
         List<Rank> list1 = rankService.getRank();
         request.setAttribute("ranking",list1);
+        List<Message> list2 = messageService.getAllMessages();
+        request.setAttribute("messages",list2);
+        request.setAttribute("stuId",student.getUsername());
         return "detail.jsp";
+    }
+
+    @RequestMapping("/addMessage")
+    public void addMessage(Message message,HttpServletResponse response){
+        message.setTimes(Dates.getDates());
+        message.setName(message.getName().split("，")[0]);
+        messageService.addMessage(message);
+    }
+
+    @RequestMapping("/pk")
+    public void pk(@RequestParam(value = "stuId")String stuId, @RequestParam(value = "id") String id,HttpServletResponse response) throws Exception{
+        int st = rankService.pk(stuId,id);
+        response.getWriter().print(st);
     }
 }

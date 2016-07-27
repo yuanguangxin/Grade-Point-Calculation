@@ -6,6 +6,7 @@ import com.models.RankExample;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.DoubleAccumulator;
 
 public class RankService {
     private RankMapper rankMapper;
@@ -46,9 +47,31 @@ public class RankService {
             }
         }
         List<Rank> list1 = new ArrayList<>();
-        for(int i=0;i<5;i++){
-            list1.add(list.get(i));
-        }
+//        for(int i=0;i<5;i++){
+//            list1.add(list.get(i));
+//        }
         return list1;
+    }
+
+    public int pk(String thisId,String id){
+        System.out.println(thisId);
+        System.out.println(id);
+        if(thisId.equals(id)) return 4;
+        RankExample rankExample = new RankExample();
+        RankExample.Criteria criteria = rankExample.createCriteria();
+        criteria.andStuIdEqualTo(thisId);
+        double this_point = Double.parseDouble(rankMapper.selectByExample(rankExample).get(0).getPoint());
+
+        RankExample rankExample1 = new RankExample();
+        RankExample.Criteria criteria1 = rankExample1.createCriteria();
+        criteria1.andStuIdEqualTo(id);
+        if(rankMapper.selectByExample(rankExample1).size()==0){
+            return 0;
+        } else {
+            double point = Double.parseDouble(rankMapper.selectByExample(rankExample1).get(0).getPoint());
+            if(this_point>point) return 1;
+            else if(this_point==point) return 2;
+            else return 3;
+         }
     }
 }
