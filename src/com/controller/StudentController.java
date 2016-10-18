@@ -10,7 +10,6 @@ import com.util.Analysis;
 import com.util.CookieUtil;
 import com.util.Dates;
 import com.util.Decode;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -67,7 +66,11 @@ public class StudentController {
         String ss = String.valueOf(Math.random()*10);
         cookieUtil.getCode(s+ss);
         response.getWriter().print(s+ss);
-        path = "/Users/yuanguangxin/Desktop/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img/code"+s+ss+".bmp";
+        File file = new File("/Users/yuanguangxin/Documents/apache-tomcat-8.5.4/webapps/cx/img");
+        if (!file.exists()){
+            file.mkdir();
+        }
+        path = "/Users/yuanguangxin/Documents/apache-tomcat-8.5.4/webapps/cx/img/code"+s+ss+".bmp";
         session.setAttribute("path",path);
     }
 
@@ -82,9 +85,9 @@ public class StudentController {
         analysis.getScores(cookieUtil,student.getUsername(),student.getPassword(),code);
         List list = analysis.getGradePoint();
         if(list==null){
-            return "login.html";
+            return "/login.jsp";
         }
-        //studentService.login(student);
+        studentService.login(student);
         Rank rank = new Rank();
         rank.setStuId(student.getUsername());
         request.setAttribute("grades",list.get(0));

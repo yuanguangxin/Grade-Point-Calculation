@@ -25,12 +25,11 @@ public class MessageService {
     public List<Message> getAllMessages(){
         MessageExample messageExample = new MessageExample();
         MessageExample.Criteria criteria = messageExample.createCriteria();
-      //  criteria.andIdIsNull();
         List<Message> list = messageMapper.selectByExample(messageExample);
         List<Message> list1 = new ArrayList<>();
-//        for (int i=1;i<=5;i++){
-//            list1.add(list.get(list.size()-i));
-//        }
+        for (int i=1;i<=5;i++){
+            list1.add(list.get(list.size()-i));
+        }
         return list1;
     }
 }

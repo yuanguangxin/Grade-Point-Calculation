@@ -26,8 +26,8 @@
     <orderEntry type="library" name="mybatis_plugins" level="project" />
     <orderEntry type="library" name="ssm" level="project" />
     <orderEntry type="library" name="http_client" level="project" />
-    <orderEntry type="library" name="servlet-api" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.0.5-bin" level="project" />
     <orderEntry type="library" name="jsoup-1.9.2" level="project" />
+    <orderEntry type="library" name="servlet-api" level="project" />
   </component>
 </module>

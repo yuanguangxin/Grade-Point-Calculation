@@ -7,9 +7,15 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/applicationContext.xml</param-value>
     </context-param>
+
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
+    <context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>cx.root</param-value>
+    </context-param>
 
     <filter>
         <filter-name>characterEncodingFilter</filter-name>
@@ -45,12 +51,12 @@
 
     <error-page>
         <error-code>404</error-code>
-        <location>/login.html</location>
+        <location>/login.jsp</location>
     </error-page>
 
     <error-page>
         <error-code>500</error-code>
-        <location>/login.html</location>
+        <location>/login.jsp</location>
     </error-page>
 
 </web-app>

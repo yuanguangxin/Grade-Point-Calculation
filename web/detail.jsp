@@ -1,6 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String path = request.getContextPath();
+%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -22,21 +25,13 @@
 <table class="table" style="width: 80%;margin: 0 auto">
     <tr>
         <td style="border: 0">
-            1.欢迎大家加群:<b>258277784</b>,提出宝贵意见。
+            1.欢迎大家加群: 258277784,提出宝贵意见。
         </td>
     </tr>
     <tr>
         <td>
             2.该项目已在<a style="font-size: 1.1em" href="https://github.com/yuanguangxin/Grade-Point-Calculation">Github</a>上开源,
             <span style="font-size: 1.1em;color: indianred">希望大家Star</span>,给予我信心,另外有兴趣小伙伴,欢迎给我发PR。
-        </td>
-    </tr>
-    <tr>
-        <td>
-            3.刚刚看了下，网站上线不到一周访问量破2万了，感谢大家的支持。
-            另外由于访问量很高，所以本网站目前想多元化，不局限于成绩相关，希望大家多提意见。
-            当然，我们也会不断推出便携的福利，比如想到大家挂网络课的痛苦，所以想在开学后做一个网络课代挂的软件，希望大家多多关注。
-            还有! <a href="http://heidacf.cn/">http://heidacf.cn/</a>也可以访问啦!
         </td>
     </tr>
 </table>
@@ -169,7 +164,7 @@
         $("#pk").on("click",function () {
             var a = $("#stuId").val();
             var b = $("#pk_id").val();
-            $.post("/pk.action",{stuId:a,id:b},function (data,textStatus) {
+            $.post("<%=path%>/pk.action",{stuId:a,id:b},function (data,textStatus) {
                 if(data==0){
                     alert("暂无数据π_π");
                 }else if(data==1){
@@ -234,7 +229,7 @@
                alert("请填写留言内容!");
                return;
            }
-           $.post("/addMessage.action",{message:a,name:b},function (data,textStatus) {
+           $.post("<%=path%>/addMessage.action",{message:a,name:b},function (data,textStatus) {
                alert("留言成功");
            });
         });
@@ -310,11 +305,6 @@
 
 <br/>
 <div id="footer" style="width: 100%;line-height: 1.8;">
-    <div style="width:100px;margin: 0 auto">
-        <small>
-            友情链接:<a href="http://www.pc6.com/az/311004.html">黑大盒子</a>
-        </small>
-    </div>
     <div style="width:220px;margin: 0 auto">
         <small>©黑大计软科协</small>
         Powered by <a href="http://yuanguangxin.me">@袁广鑫</a>

@@ -1,4 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String path = request.getContextPath();
+%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +17,7 @@
 </head>
 <body>
 <div class="center">
-    <form action="/login.action" method="post">
+    <form action="<%=path%>/login.action" method="post">
         <ul id="email_login" class="common_ul">
             <h3>成绩查询登录</h3>
             <hr/>
@@ -57,8 +62,8 @@
         }
     };
     document.getElementsByTagName("img")[0].onclick = function () {
-        $.post("/getCode.action", {}, function (data, textStatus) {
-            document.getElementById("codes").setAttribute("src", "img/code" + data + ".bmp")
+        $.post("<%=path%>/getCode.action", {}, function (data, textStatus) {
+            document.getElementById("codes").setAttribute("src", "http://localhost:8080/cx/img/code" + data + ".bmp")
         })
     };
     var keyStr = "ABCDEFGHIJKLMNOP" + "QRSTUVWXYZabcdef" + "ghijklmnopqrstuv"
@@ -88,8 +93,8 @@
         } while (i < input.length);
         return output;
     }
-    $.post("/getCode.action", {}, function (data, textStatus) {
-        document.getElementById("codes").setAttribute("src", "img/code" + data + ".bmp")
+    $.post("<%=path%>/getCode.action", {}, function (data, textStatus) {
+        document.getElementById("codes").setAttribute("src", "http://localhost:8080/cx/img/code" + data + ".bmp")
     });
     $("#submit").click(function () {
         var va = document.getElementById("password_input").value;
