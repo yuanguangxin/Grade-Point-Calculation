@@ -60,7 +60,7 @@ public class CookieUtil {
     }
 
     public void getCode(String us){
-        content = getRandom("GET", "http://ssfw3.hlju.edu.cn/ssfw/jwcaptcha.do", null, null, false, "/Users/yuanguangxin/Documents/apache-tomcat-8.5.4/webapps/cx/img",us);
+        content = getRandom("GET", "http://ssfw3.hlju.edu.cn/ssfw/jwcaptcha.do", null, null, false, "/Users/yuanguangxin/Desktop/etc/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img",us);
         if(content==null){
             return;
         }

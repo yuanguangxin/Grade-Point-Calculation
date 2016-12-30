@@ -220,6 +220,13 @@
         </button>
     </div>
 </form>
+<br/>
+<div class="form-group" style="width: 80%;margin: 0 auto;margin-top: 10px">
+    <button type="button" style="outline: none;" class="btn btn-success btn-group-sm">
+        分享到朋友圈：
+    </button>
+    &nbsp;&nbsp;<a href="javascript:void(window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(document.location.href)));" title="分享到QQ空间"><img src="http://imgcache.qq.com/qzonestyle/qzone_app/app_share_v1/qzone_logo.png" alt="" /></a>
+</div>
 <script>
     $(function () {
         $("#leave").on("click",function () {

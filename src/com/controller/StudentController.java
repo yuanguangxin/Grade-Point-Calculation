@@ -66,11 +66,11 @@ public class StudentController {
         String ss = String.valueOf(Math.random()*10);
         cookieUtil.getCode(s+ss);
         response.getWriter().print(s+ss);
-        File file = new File("/Users/yuanguangxin/Documents/apache-tomcat-8.5.4/webapps/cx/img");
+        File file = new File("/Users/yuanguangxin/Desktop/etc/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img");
         if (!file.exists()){
             file.mkdir();
         }
-        path = "/Users/yuanguangxin/Documents/apache-tomcat-8.5.4/webapps/cx/img/code"+s+ss+".bmp";
+        path = "/Users/yuanguangxin/Desktop/etc/Grade Point Calculation/out/artifacts/Grade_Point_Calculation_war_exploded/img/code"+s+ss+".bmp";
         session.setAttribute("path",path);
     }
 

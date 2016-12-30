@@ -44,7 +44,7 @@
     </form>
     <div id="footer">
         <div style="width:220px;margin: 0 auto">
-            <small>©黑大计软科协</small>
+            <%--<small>©黑大计软科协</small>--%>
             Powered by <a href="http://yuanguangxin.me">@袁广鑫</a>
         </div>
     </div>
@@ -63,7 +63,7 @@
     };
     document.getElementsByTagName("img")[0].onclick = function () {
         $.post("<%=path%>/getCode.action", {}, function (data, textStatus) {
-            document.getElementById("codes").setAttribute("src", "http://localhost:8080/cx/img/code" + data + ".bmp")
+            document.getElementById("codes").setAttribute("src", "http://192.168.43.164:8080/img/code" + data + ".bmp")
         })
     };
     var keyStr = "ABCDEFGHIJKLMNOP" + "QRSTUVWXYZabcdef" + "ghijklmnopqrstuv"
@@ -94,7 +94,7 @@
         return output;
     }
     $.post("<%=path%>/getCode.action", {}, function (data, textStatus) {
-        document.getElementById("codes").setAttribute("src", "http://localhost:8080/cx/img/code" + data + ".bmp")
+        document.getElementById("codes").setAttribute("src", "http://192.168.43.164:8080/img/code" + data + ".bmp")
     });
     $("#submit").click(function () {
         var va = document.getElementById("password_input").value;

@@ -1,21 +1,21 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="Grade Point Calculation:war exploded">
+  <artifact type="exploded-war" name="Grade Point Calculation:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/Grade_Point_Calculation_war_exploded</output-path>
-    <root id="archive" name="Grade Point Calculation_war exploded.war">
-      <element id="javaee-facet-resources" facet="Grade Point Calculation/web/Web" />
+    <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="Grade Point Calculation" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="mybatis_plugins" />
           <element id="library" level="project" name="c3p0" />
+          <element id="library" level="project" name="mybatis_plugins" />
           <element id="library" level="project" name="ssm" />
           <element id="library" level="project" name="http_client" />
           <element id="library" level="project" name="mysql-connector-java-5.0.5-bin" />
           <element id="library" level="project" name="jsoup-1.9.2" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="Grade Point Calculation/web/Web" />
     </root>
   </artifact>
 </component>
