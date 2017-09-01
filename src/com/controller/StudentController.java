@@ -81,6 +81,8 @@ public class StudentController {
         response.addCookie(c1);
         response.addCookie(c2);
         student.setPassword(new String(Decode.decode(student.getPassword())));
+        System.out.println(student.getUsername());
+        System.out.println(student.getPassword());
         Analysis analysis = new Analysis();
         analysis.getScores(cookieUtil,student.getUsername(),student.getPassword(),code);
         List list = analysis.getGradePoint();

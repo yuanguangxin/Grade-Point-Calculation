@@ -81,7 +81,7 @@ public class Analysis {
                 ss+=Double.parseDouble(sub_scores[i])*Double.parseDouble(sub_points[i]);
             }
             if(Double.parseDouble(sub_scores[i])>=60){
-                if(sub_grades[i].indexOf("2015-2016")!=-1){
+                if(sub_grades[i].indexOf("2016-2017")!=-1){
                     this_sum_point+=Double.parseDouble(sub_points[i]);
                     this_sum_score+=Double.parseDouble(sub_scores[i])*Double.parseDouble(sub_points[i]);
                 }

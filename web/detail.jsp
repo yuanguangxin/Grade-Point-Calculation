@@ -77,7 +77,7 @@
         legend: {
             orient: 'vertical',
             left: 'left',
-            data: ['2015-2016','2014-2015','2013-2014','2012-2013']
+            data: ['2016-2017','2015-2016','2014-2015','2013-2014']
         },
         series : [
             {
@@ -86,10 +86,10 @@
                 radius : '55%',
                 center: ['50%', '60%'],
                 data:[
-                    {value:a1, name:'2015-2016'},
-                    {value:b1, name:'2014-2015'},
-                    {value:c1, name:'2013-2014'},
-                    {value:d1, name:'2012-2013'}
+                    {value:a1, name:'2016-2017'},
+                    {value:b1, name:'2015-2016'},
+                    {value:c1, name:'2014-2015'},
+                    {value:d1, name:'2013-2014'}
                 ],
                 itemStyle: {
                     emphasis: {
@@ -183,7 +183,7 @@
 <br/>
 <div class="form-group" style="width: 80%;margin: 0 auto">
     <button type="button" style="outline: none;" class="btn btn-success btn-group-sm">
-        留言(可以使劲夸我!)
+        留言
     </button>
 </div>
 <table class="table" style="width: 80%;margin: 0 auto">
@@ -193,21 +193,21 @@
         <td>回复信息</td>
         <td>留言时间</td>
     </tr>
-    <c:forEach items="${requestScope.messages}" var="message">
-        <tr>
-            <td>${message.name}</td>
-            <td>${message.message}</td>
-            <c:choose>
-                <c:when test="${message.reply==null}">
-                    <td></td>
-                </c:when>
-                <c:when test="${message.reply!=null}">
-                    <td>${message.reply}</td>
-                </c:when>
-            </c:choose>
-            <td>${message.times}</td>
-        </tr>
-    </c:forEach>
+    <%--<c:forEach items="${requestScope.messages}" var="message">--%>
+        <%--<tr>--%>
+            <%--<td>${message.name}</td>--%>
+            <%--<td>${message.message}</td>--%>
+            <%--<c:choose>--%>
+                <%--<c:when test="${message.reply==null}">--%>
+                    <%--<td></td>--%>
+                <%--</c:when>--%>
+                <%--<c:when test="${message.reply!=null}">--%>
+                    <%--<td>${message.reply}</td>--%>
+                <%--</c:when>--%>
+            <%--</c:choose>--%>
+            <%--<td>${message.times}</td>--%>
+        <%--</tr>--%>
+    <%--</c:forEach>--%>
 </table>
 <form>
     <div class="form-group" style="width: 80%;margin: 0 auto">
@@ -221,12 +221,6 @@
     </div>
 </form>
 <br/>
-<div class="form-group" style="width: 80%;margin: 0 auto;margin-top: 10px">
-    <button type="button" style="outline: none;" class="btn btn-success btn-group-sm">
-        分享到朋友圈：
-    </button>
-    &nbsp;&nbsp;<a href="javascript:void(window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(document.location.href)));" title="分享到QQ空间"><img src="http://imgcache.qq.com/qzonestyle/qzone_app/app_share_v1/qzone_logo.png" alt="" /></a>
-</div>
 <script>
     $(function () {
         $("#leave").on("click",function () {
@@ -293,7 +287,7 @@
             data:['绩点']
         },
         xAxis: {
-            data: ["2015-2016","2014-2015","2013-2014","2012-2013"]
+            data: ["2016-2017","2015-2016","2014-2015","2013-2014"]
         },
         yAxis: {
             min:6,

@@ -63,7 +63,7 @@
     };
     document.getElementsByTagName("img")[0].onclick = function () {
         $.post("<%=path%>/getCode.action", {}, function (data, textStatus) {
-            document.getElementById("codes").setAttribute("src", "http://192.168.43.164:8080/img/code" + data + ".bmp")
+            document.getElementById("codes").setAttribute("src", "http://localhost:8081/img/code" + data + ".bmp")
         })
     };
     var keyStr = "ABCDEFGHIJKLMNOP" + "QRSTUVWXYZabcdef" + "ghijklmnopqrstuv"
@@ -94,7 +94,7 @@
         return output;
     }
     $.post("<%=path%>/getCode.action", {}, function (data, textStatus) {
-        document.getElementById("codes").setAttribute("src", "http://192.168.43.164:8080/img/code" + data + ".bmp")
+        document.getElementById("codes").setAttribute("src", "http://localhost:8081/img/code" + data + ".bmp")
     });
     $("#submit").click(function () {
         var va = document.getElementById("password_input").value;
