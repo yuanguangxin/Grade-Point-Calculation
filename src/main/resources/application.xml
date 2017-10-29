@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:beans="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+    ">
+    <import resource="classpath:spring-dao.xml"/>
+    <import resource="classpath:spring-mvc.xml"/>
+
+    <bean id="config" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:config.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="threadPoolTaskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <property name="corePoolSize" value="10"/>
+        <property name="keepAliveSeconds" value="300"/>
+        <property name="maxPoolSize" value="50"/>
+        <property name="queueCapacity" value="1000"/>
+    </bean>
+
+</beans>

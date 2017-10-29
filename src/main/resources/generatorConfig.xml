@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <!-- 必须配置驱动包的路径 -->
+    <classPathEntry
+            location="/Users/yuanguangxin/Desktop/Grade-Point-Calculation/src/main/java/party/csti/gpa/test/mysql-connector-java-5.0.4-bin.jar"/>
+
+    <context id="Mysql" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/grade_points"
+                        userId="root"
+                        password="root"/>
+
+        <!-- 指定生成pojo的包和此包在项目中的地址； -->
+        <javaModelGenerator targetPackage="party.csti.gpa.model"
+                            targetProject="/Users/yuanguangxin/Desktop/Grade-Point-Calculation/src/main/java"/>
+
+        <!-- 指定生成pojo的映射xml文件的所在包和此包在项目中的地址 -->
+        <sqlMapGenerator targetPackage="party.csti.gpa.dao.mapper"
+                         targetProject="/Users/yuanguangxin/Desktop/Grade-Point-Calculation/src/main/java"/>
+
+        <!-- 指定生成访问映射xml文件的接口所在包和此包在项目中的地址； -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="party.csti.gpa.dao"
+                             targetProject="/Users/yuanguangxin/Desktop/Grade-Point-Calculation/src/main/java">
+        </javaClientGenerator>
+
+        <!-- 配置表名跟pojo名  该table节点可以多个 -->
+        <table tableName="student"/>
+        <table tableName="message"/>
+        <table tableName="information"/>
+    </context>
+</generatorConfiguration>
