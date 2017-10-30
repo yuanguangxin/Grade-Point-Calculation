@@ -88,12 +88,16 @@ public class HttpUtil {
             content = curl("POST", rateReviewUrl.replaceAll("\\[n\\]", String.valueOf(i)), paramMap, resmap, false);
             if (content != null) break;
         }
-        map.put("message", content.getBody());
+	if(content!=null){
+            map.put("message", content.getBody());
+        }
         for (int i = 3; i >= 1; i--) {
             content = curl("POST", userInfoUrl.replaceAll("\\[n\\]", String.valueOf(i)), paramMap, resmap, false);
             if (content != null) break;
         }
-        map.put("userInfo", content.getBody());
+        if (content!=null){
+            map.put("userInfo", content.getBody());
+        }
         return map;
     }
 

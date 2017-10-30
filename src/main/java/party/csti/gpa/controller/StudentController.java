@@ -53,16 +53,21 @@ public class StudentController {
     }
 
     @RequestMapping("/login")
-    public String login(Student student, @RequestParam(value = "code") String code, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
-        if (student.getStuId().equals(user) && student.getPassword().equals(pass)) {
-            session.setAttribute("admin", "true");
-            return "/WEB-INF/admin/browse.jsp";
-        }
+    public String login(@RequestParam(value = "code") String code, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
         try {
-            Cookie user = new Cookie("user", student.getStuId());
-            Cookie pass = new Cookie("pass", student.getPassword());
-            response.addCookie(user);
-            response.addCookie(pass);
+            Student student = new Student();
+            Cookie[] cookies = request.getCookies();
+            for (int i = 0; i < cookies.length; i++) {
+                if (cookies[i].getName().equals("user")) {
+                    student.setStuId(cookies[i].getValue());
+                } else if (cookies[i].getName().equals("pass")) {
+                    student.setPassword(cookies[i].getValue());
+                }
+            }
+            if (student.getStuId().equals(user) && student.getPassword().equals(pass)) {
+                session.setAttribute("admin", "true");
+                return "/WEB-INF/admin/browse.jsp";
+            }
             Analysis analysis = new Analysis();
             Map map = analysis.getGradePoint(httpUtil, student.getStuId(), student.getPassword(), code);
             if (map == null) {
@@ -93,7 +98,7 @@ public class StudentController {
             try {
                 List<StudentView> list = studentService.search(infoService.search(name));
                 request.setAttribute("info", list);
-                request.setAttribute("name",name);
+                request.setAttribute("name", name);
                 return "/WEB-INF/admin/browse.jsp";
             } catch (Exception e) {
                 log.error("管理员查询异常", e);
