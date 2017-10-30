@@ -63,11 +63,15 @@
 
     document.body.onkeydown = function () {
         if (event.keyCode == 13) {
+            $.cookie("user",document.getElementById("stu_id").value);
+            $.cookie("pass",document.getElementById("password_input").value);
             $("form").submit();
         }
     };
 
     $("#submit").click(function () {
+        $.cookie("user",document.getElementById("stu_id").value);
+        $.cookie("pass",document.getElementById("password_input").value);
         $("form").submit()
     })
 
